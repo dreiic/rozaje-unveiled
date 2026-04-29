@@ -27,7 +27,6 @@ const articleCopy = {
     next: "Nächster Schritt",
     defaultCtaTitle: "Wenn Sie Rožaje lieber erleben als nur darüber lesen möchten,",
     defaultCtaAccent: "finden Sie Ferienwohnungen, Skipässe und Touren über Monte i More.",
-    monte: "Monte i More besuchen",
     more: "Weitere Artikel lesen",
   },
   en: {
@@ -36,7 +35,6 @@ const articleCopy = {
     next: "Next step",
     defaultCtaTitle: "If you'd rather experience Rožaje than just read about it,",
     defaultCtaAccent: "you can find apartments, ski passes and tours through Monte i More.",
-    monte: "Visit Monte i More",
     more: "Read more articles",
   },
   me: {
@@ -45,7 +43,6 @@ const articleCopy = {
     next: "Sljedeći korak",
     defaultCtaTitle: "Ako Rožaje želite da doživite, a ne samo da čitate o njemu,",
     defaultCtaAccent: "apartmane, ski-pasove i ture možete pronaći kroz Monte i More.",
-    monte: "Posjeti Monte i More",
     more: "Čitaj još članaka",
   },
 } as const;
@@ -142,18 +139,12 @@ export function ArticlePage(p: ArticlePageProps) {
                 <span className="italic text-[color:var(--gold)]">{copy.defaultCtaAccent}</span>
               </p>
               {p.ctaBody && <p className="mt-4 text-foreground/70">{p.ctaBody}</p>}
-              <div className="mt-8 flex flex-wrap gap-6">
-                <a
-                  href="#"
-                  className="inline-flex items-center gap-3 border-b border-foreground pb-2 text-[12px] uppercase tracking-[0.28em]"
-                >
-                  {copy.monte} →
-                </a>
+              <div className="mt-8">
                 <Link
                   to="/journal"
-                  className="inline-flex items-center gap-3 pb-2 text-[12px] uppercase tracking-[0.28em] text-muted-foreground link-underline"
+                  className="inline-flex items-center gap-3 border-b border-foreground pb-2 text-[12px] uppercase tracking-[0.28em]"
                 >
-                  {copy.more}
+                  {copy.more} →
                 </Link>
               </div>
             </section>

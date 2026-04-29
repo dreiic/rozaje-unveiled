@@ -58,9 +58,16 @@ export function Navbar() {
 
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 24);
+    const onResize = () => {
+      if (window.innerWidth >= 1024) setOpen(false);
+    };
     onScroll();
     window.addEventListener("scroll", onScroll, { passive: true });
-    return () => window.removeEventListener("scroll", onScroll);
+    window.addEventListener("resize", onResize);
+    return () => {
+      window.removeEventListener("scroll", onScroll);
+      window.removeEventListener("resize", onResize);
+    };
   }, []);
 
   return (
@@ -71,7 +78,7 @@ export function Navbar() {
           : "bg-transparent"
       }`}
     >
-      <div className="mx-auto flex max-w-[1520px] items-center justify-between px-7 py-7 md:px-10 lg:px-11">
+      <div className="mx-auto flex max-w-[1520px] items-center justify-between px-5 py-5 md:px-10 md:py-6 lg:px-11 lg:py-7">
         <Logo light={isOverlay} size="md" />
 
         <nav className="hidden items-center gap-8 xl:gap-11 lg:flex">
@@ -127,11 +134,13 @@ export function Navbar() {
             ))}
           </div>
 
-          <div className={`hidden h-8 w-px md:block ${isOverlay ? "bg-white/18" : "bg-border"}`} />
+          <div
+            className={`hidden h-8 w-px md:block lg:hidden ${isOverlay ? "bg-white/18" : "bg-border"}`}
+          />
 
           <button
             aria-label={open ? copy.close : copy.menu}
-            className={`flex items-center gap-4 text-[11px] uppercase tracking-[0.36em] ${tone}`}
+            className={`flex items-center gap-4 text-[11px] uppercase tracking-[0.36em] lg:hidden ${tone}`}
             onClick={() => setOpen((v) => !v)}
           >
             <span>{open ? copy.close : copy.menu}</span>
@@ -144,7 +153,7 @@ export function Navbar() {
       </div>
 
       {open && (
-        <div className="border-t border-border/60 bg-background">
+        <div className="border-t border-border/60 bg-background lg:hidden">
           <div className="mx-auto flex max-w-[1520px] flex-col px-7 py-8 md:px-10 lg:px-11">
             {copy.links.map((l) => (
               <Link

@@ -23,12 +23,12 @@ function Snowflake({ size }: { size: number }) {
       aria-hidden
     >
       {ARMS.map((angle) => (
-        <g key={angle} transform={`rotate(${angle}, 50, 50)`} stroke={BLUE} strokeWidth="6.5">
-          <line x1="50" y1="50" x2="50" y2="7" />
-          <line x1="50" y1="27" x2="37" y2="19" />
-          <line x1="50" y1="27" x2="63" y2="19" />
-          <line x1="50" y1="39" x2="41" y2="31" />
-          <line x1="50" y1="39" x2="59" y2="31" />
+        <g key={angle} transform={`rotate(${angle}, 50, 50)`} stroke={BLUE} strokeWidth="7.5">
+          <line x1="50" y1="50" x2="50" y2="6" />
+          <line x1="50" y1="14" x2="43" y2="6" />
+          <line x1="50" y1="14" x2="57" y2="6" />
+          <line x1="50" y1="28" x2="40" y2="18" />
+          <line x1="50" y1="28" x2="60" y2="18" />
         </g>
       ))}
     </svg>
@@ -36,9 +36,9 @@ function Snowflake({ size }: { size: number }) {
 }
 
 const sizeMap = {
-  sm: { icon: 26, wordmark: "text-lg", super: "text-xs" },
-  md: { icon: 32, wordmark: "text-2xl", super: "text-sm" },
-  lg: { icon: 44, wordmark: "text-4xl", super: "text-base" },
+  sm: { icon: 28, wordmark: "text-base", super: "text-[9px]", gap: "gap-1.5" },
+  md: { icon: 36, wordmark: "text-xl", super: "text-[10px]", gap: "gap-2" },
+  lg: { icon: 52, wordmark: "text-3xl", super: "text-sm", gap: "gap-2.5" },
 };
 
 export function Logo({ light = false, size = "md", className = "", asLink = true }: LogoProps) {
@@ -46,18 +46,26 @@ export function Logo({ light = false, size = "md", className = "", asLink = true
   const textColor = light ? "#ffffff" : "currentColor";
 
   const inner = (
-    <span className={`flex items-center gap-2 ${className}`}>
+    <span className={`flex items-center ${s.gap} ${className}`}>
       <Snowflake size={s.icon} />
-      <span className="flex items-baseline gap-0.5">
+      <span className="relative inline-flex items-start">
         <span
-          className={`font-sans font-bold uppercase tracking-[-0.02em] leading-none ${s.wordmark}`}
-          style={{ color: textColor }}
+          className={`uppercase leading-[0.85] ${s.wordmark}`}
+          style={{
+            color: textColor,
+            fontFamily: '"Bowlby One", "Inter", sans-serif',
+            letterSpacing: "-0.01em",
+          }}
         >
           Rožaje
         </span>
         <span
-          className={`font-sans font-bold leading-none ${s.super}`}
-          style={{ color: BLUE }}
+          className={`ml-0.5 leading-none ${s.super}`}
+          style={{
+            color: BLUE,
+            fontFamily: '"Bowlby One", "Inter", sans-serif',
+            transform: "translateY(-0.1em)",
+          }}
         >
           365
         </span>
