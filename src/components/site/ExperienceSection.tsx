@@ -1,14 +1,11 @@
 import { useReveal } from "@/hooks/use-reveal";
-import stay from "@/assets/stay.jpg";
-import winter from "@/assets/winter.jpg";
-import summer from "@/assets/summer.jpg";
-import prices from "@/assets/prices.jpg";
+import { rozajeImages } from "@/assets/rozaje365";
 
 const cards = [
-  { title: "Apartments", note: "Walking distance to the lifts.", img: stay },
-  { title: "Ski passes", note: "Hajla resort, full season.", img: winter },
-  { title: "Tours", note: "Guided routes through Prokletije.", img: summer },
-  { title: "Quads & Snowmobiles", note: "Offroad, year round.", img: prices },
+  { title: "Apartments", note: "Walking distance to the lifts.", img: rozajeImages.townValley },
+  { title: "Ski passes", note: "Hajla resort, full season.", img: rozajeImages.lift },
+  { title: "Tours", note: "Guided routes through Prokletije.", img: rozajeImages.snowRidge },
+  { title: "Quads & Snowmobiles", note: "Offroad, year round.", img: rozajeImages.winterRoad },
 ];
 
 export function ExperienceSection() {
@@ -49,7 +46,9 @@ export function ExperienceSection() {
                   <div className="font-serif text-2xl">{c.title}</div>
                   <div className="mt-1 text-xs text-background/70">{c.note}</div>
                 </div>
-                <span className="text-xl text-background/80 transition-transform duration-500 group-hover:translate-x-1">→</span>
+                <span className="text-xl text-background/80 transition-transform duration-500 group-hover:translate-x-1">
+                  →
+                </span>
               </div>
             </a>
           ))}

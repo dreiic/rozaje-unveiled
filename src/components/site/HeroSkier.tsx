@@ -1,5 +1,5 @@
 import { useEffect, useRef, useState } from "react";
-import heroImg from "@/assets/hero-mountains.jpg";
+import { rozajeImages } from "@/assets/rozaje365";
 
 /**
  * Minimal cinematic hero — full-bleed image with a slow zoom-out.
@@ -43,7 +43,7 @@ export function HeroSkier() {
       ref={wrapRef}
       className="relative"
       style={{ height: "200vh" }}
-      aria-label="Rozaje — northern Montenegro"
+      aria-label="Rožaje — northern Montenegro"
     >
       <div className="sticky top-0 h-screen w-full overflow-hidden bg-ink">
         {/* Full-bleed image */}
@@ -55,7 +55,7 @@ export function HeroSkier() {
           }}
         >
           <img
-            src={heroImg}
+            src={rozajeImages.snowyForest}
             alt="Snow-covered ridges and pine forest in northern Montenegro at first light"
             width={1920}
             height={1080}
@@ -69,7 +69,7 @@ export function HeroSkier() {
         {/* Top-left label */}
         <div className="absolute left-6 top-28 z-10 md:left-12 md:top-32">
           <div className="text-[10px] font-medium uppercase tracking-[0.36em] text-white/85">
-            Rozaje — Northern Montenegro
+            Rožaje — Northern Montenegro
           </div>
         </div>
 

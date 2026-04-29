@@ -2,13 +2,13 @@ import { Link } from "@tanstack/react-router";
 import { useReveal } from "@/hooks/use-reveal";
 
 const cats = [
-  { n: "01", title: "Skiing in Rozaje", note: "Pistes, snow, season, comparisons", to: "/winter" },
+  { n: "01", title: "Skiing in Rožaje", note: "Pistes, snow, season, comparisons", to: "/winter" },
   { n: "02", title: "Accommodation", note: "Apartments, hotels, neighbourhoods", to: "/stay" },
   { n: "03", title: "Prices & Costs", note: "Real budgets, week by week", to: "/prices" },
   { n: "04", title: "Hiking & Summer", note: "Trails, peaks, alpine meadows", to: "/summer" },
   { n: "05", title: "Quads & Adventure", note: "Offroad through the north", to: "/journal" },
   { n: "06", title: "Snowmobiles", note: "Winter at full throttle", to: "/journal" },
-  { n: "07", title: "Comparisons", note: "Rozaje vs. Austria, Bosnia, Kolašin", to: "/journal" },
+  { n: "07", title: "Comparisons", note: "Rožaje vs. Austria, Bosnia, Kolašin", to: "/journal" },
   { n: "08", title: "Living in the North", note: "Moving, working, slowing down", to: "/journal" },
 ] as const;
 

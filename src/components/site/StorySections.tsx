@@ -1,58 +1,50 @@
 import { useReveal } from "@/hooks/use-reveal";
-import winter from "@/assets/winter.jpg";
-import summer from "@/assets/summer.jpg";
-import stay from "@/assets/stay.jpg";
-import prices from "@/assets/prices.jpg";
+import { rozajeImages } from "@/assets/rozaje365";
 
 const stories = [
   {
     eyebrow: "Chapter I",
-    kicker: "What Rozaje is really like",
+    kicker: "What Rožaje is really like",
     title: "A small town that doesn't try to impress you.",
-    body:
-      "Rozaje won't sell itself to you at the airport. There are no glossy lift stations, no chains of luxury chalets. What it offers instead is honesty — wide forests, pure snow, simple food, and people who still treat travel as an exchange rather than a transaction.",
+    body: "Rožaje won't sell itself to you at the airport. There are no glossy lift stations, no chains of luxury chalets. What it offers instead is honesty — wide forests, pure snow, simple food, and people who still treat travel as an exchange rather than a transaction.",
     notes: ["Population ~9,000", "Elevation 1,030 m", "3.5 h from Podgorica"],
-    img: winter,
+    img: rozajeImages.townValley,
     side: "left" as const,
   },
   {
     eyebrow: "Chapter II",
-    kicker: "Winter in Rozaje",
+    kicker: "Winter in Rožaje",
     title: "Snow you can still trust.",
-    body:
-      "Hajla holds snow well into April most years. Pistes are short by Alpine standards, but uncrowded — you ski your own line, not someone else's queue. Expect modest infrastructure, very fair prices, and a quiet that reminds you why people started skiing in the first place.",
+    body: "Hajla holds snow well into April most years. Pistes are short by Alpine standards, but uncrowded — you ski your own line, not someone else's queue. Expect modest infrastructure, very fair prices, and a quiet that reminds you why people started skiing in the first place.",
     notes: ["Season Dec → April", "Day pass ≈ €15", "5 lifts, 7 km of pistes"],
-    img: winter,
+    img: rozajeImages.skiMountain,
     side: "right" as const,
   },
   {
     eyebrow: "Chapter III",
     kicker: "Summer & Nature",
     title: "The other half of the year nobody tells you about.",
-    body:
-      "When the snow goes, the Prokletije meadows turn green. Hike to glacier lakes, sleep in family-run katuns, and meet shepherds whose families have walked the same trails for centuries. Summer here is the version of the Alps that the Alps used to be.",
+    body: "When the snow goes, the Prokletije meadows turn green. Hike to glacier lakes, sleep in family-run katuns, and meet shepherds whose families have walked the same trails for centuries. Summer here is the version of the Alps that the Alps used to be.",
     notes: ["Hajla peak 2,403 m", "Wildflowers June → August", "Cool 22°C average"],
-    img: summer,
+    img: rozajeImages.valleyMeadow,
     side: "left" as const,
   },
   {
     eyebrow: "Chapter IV",
     kicker: "Prices & reality",
     title: "What a week here actually costs.",
-    body:
-      "A comfortable week — apartment, food, ski pass, two activities — sits comfortably under what a single ski-pass costs in St. Anton. We publish real numbers, not brochure prices, so you can plan honestly.",
+    body: "A comfortable week — apartment, food, ski pass, two activities — sits comfortably under what a single ski-pass costs in St. Anton. We publish real numbers, not brochure prices, so you can plan honestly.",
     notes: ["Apartment from €35/night", "Dinner ≈ €10–14", "Coffee €1.20"],
-    img: prices,
+    img: rozajeImages.mountainRoad,
     side: "right" as const,
   },
   {
     eyebrow: "Chapter V",
     kicker: "Where to stay",
     title: "Wood, linen, mountain light through the window.",
-    body:
-      "Most travellers prefer apartments here over hotels. They're calmer, better located near the slopes, and they let you taste the rhythm of local life — buying bread in the morning, drinking rakija with neighbours in the evening.",
+    body: "Most travellers prefer apartments here over hotels. They're calmer, better located near the slopes, and they let you taste the rhythm of local life — buying bread in the morning, drinking rakija with neighbours in the evening.",
     notes: ["Apartments > Hotels", "Walk to lifts < 10 min", "Family-owned"],
-    img: stay,
+    img: rozajeImages.forestRoad,
     side: "left" as const,
   },
 ];
@@ -71,15 +63,8 @@ export function StorySections() {
 
         <div className="space-y-32 md:space-y-44">
           {stories.map((s, i) => (
-            <article
-              key={i}
-              className="grid items-center gap-10 md:grid-cols-12 md:gap-16"
-            >
-              <div
-                className={`reveal md:col-span-6 ${
-                  s.side === "right" ? "md:order-2" : ""
-                }`}
-              >
+            <article key={i} className="grid items-center gap-10 md:grid-cols-12 md:gap-16">
+              <div className={`reveal md:col-span-6 ${s.side === "right" ? "md:order-2" : ""}`}>
                 <div className="relative overflow-hidden">
                   <img
                     src={s.img}
@@ -90,7 +75,7 @@ export function StorySections() {
                 </div>
                 <div className="mt-3 flex items-center justify-between text-[11px] uppercase tracking-[0.2em] text-muted-foreground">
                   <span>{s.eyebrow}</span>
-                  <span>Rozaje · 365</span>
+                  <span>Rožaje · 365</span>
                 </div>
               </div>
 

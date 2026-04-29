@@ -1,5 +1,6 @@
 import { Link } from "@tanstack/react-router";
 import { useReveal } from "@/hooks/use-reveal";
+import { useLanguage } from "@/lib/language";
 import type { ReactNode } from "react";
 
 export interface ArticleSection {
@@ -19,8 +20,41 @@ export interface ArticlePageProps {
   ctaBody?: string;
 }
 
+const articleCopy = {
+  de: {
+    pros: "Dafür spricht",
+    cons: "Gut zu wissen",
+    next: "Nächster Schritt",
+    defaultCtaTitle: "Wenn Sie Rožaje lieber erleben als nur darüber lesen möchten,",
+    defaultCtaAccent: "finden Sie Ferienwohnungen, Skipässe und Touren über Monte i More.",
+    monte: "Monte i More besuchen",
+    more: "Weitere Artikel lesen",
+  },
+  en: {
+    pros: "In its favour",
+    cons: "Things to know",
+    next: "Next step",
+    defaultCtaTitle: "If you'd rather experience Rožaje than just read about it,",
+    defaultCtaAccent: "you can find apartments, ski passes and tours through Monte i More.",
+    monte: "Visit Monte i More",
+    more: "Read more articles",
+  },
+  me: {
+    pros: "Šta govori u prilog",
+    cons: "Dobro je znati",
+    next: "Sljedeći korak",
+    defaultCtaTitle: "Ako Rožaje želite da doživite, a ne samo da čitate o njemu,",
+    defaultCtaAccent: "apartmane, ski-pasove i ture možete pronaći kroz Monte i More.",
+    monte: "Posjeti Monte i More",
+    more: "Čitaj još članaka",
+  },
+} as const;
+
 export function ArticlePage(p: ArticlePageProps) {
   const ref = useReveal<HTMLDivElement>();
+  const { language } = useLanguage();
+  const copy = articleCopy[language];
+
   return (
     <article ref={ref} className="bg-background">
       {/* Title block */}
@@ -39,12 +73,7 @@ export function ArticlePage(p: ArticlePageProps) {
       {/* Cover */}
       <div className="mx-auto mt-16 max-w-[1400px] px-6 md:px-10">
         <div className="reveal overflow-hidden">
-          <img
-            src={p.cover}
-            alt=""
-            loading="lazy"
-            className="aspect-[16/9] w-full object-cover"
-          />
+          <img src={p.cover} alt="" loading="lazy" className="aspect-[16/9] w-full object-cover" />
         </div>
       </div>
 
@@ -54,7 +83,9 @@ export function ArticlePage(p: ArticlePageProps) {
           <aside className="reveal md:col-span-3">
             <div className="sticky top-28 space-y-2 text-xs uppercase tracking-[0.2em] text-muted-foreground">
               {p.sections.map((s, i) => (
-                <div key={i}>0{i + 1} — {s.heading}</div>
+                <div key={i}>
+                  0{i + 1} — {s.heading}
+                </div>
               ))}
             </div>
           </aside>
@@ -76,7 +107,7 @@ export function ArticlePage(p: ArticlePageProps) {
               <section className="reveal grid gap-10 border-y border-border py-12 md:grid-cols-2">
                 {p.pros && (
                   <div>
-                    <div className="eyebrow mb-4 text-[color:var(--moss)]">In its favour</div>
+                    <div className="eyebrow mb-4 text-[color:var(--moss)]">{copy.pros}</div>
                     <ul className="space-y-3 text-foreground/80">
                       {p.pros.map((x) => (
                         <li key={x} className="flex gap-3">
@@ -89,7 +120,7 @@ export function ArticlePage(p: ArticlePageProps) {
                 )}
                 {p.cons && (
                   <div>
-                    <div className="eyebrow mb-4 text-[color:var(--gold)]">Things to know</div>
+                    <div className="eyebrow mb-4 text-[color:var(--gold)]">{copy.cons}</div>
                     <ul className="space-y-3 text-foreground/80">
                       {p.cons.map((x) => (
                         <li key={x} className="flex gap-3">
@@ -105,13 +136,10 @@ export function ArticlePage(p: ArticlePageProps) {
 
             {/* Natural CTA */}
             <section className="reveal mt-8 border-t border-border pt-10">
-              <div className="eyebrow mb-4">Next step</div>
+              <div className="eyebrow mb-4">{copy.next}</div>
               <p className="font-serif text-2xl leading-snug md:text-3xl text-balance">
-                {p.ctaTitle ??
-                  "If you'd rather experience Rozaje than just read about it,"}{" "}
-                <span className="italic text-[color:var(--gold)]">
-                  you can find apartments, ski passes and tours through Monte i More.
-                </span>
+                {p.ctaTitle ?? copy.defaultCtaTitle}{" "}
+                <span className="italic text-[color:var(--gold)]">{copy.defaultCtaAccent}</span>
               </p>
               {p.ctaBody && <p className="mt-4 text-foreground/70">{p.ctaBody}</p>}
               <div className="mt-8 flex flex-wrap gap-6">
@@ -119,13 +147,13 @@ export function ArticlePage(p: ArticlePageProps) {
                   href="#"
                   className="inline-flex items-center gap-3 border-b border-foreground pb-2 text-[12px] uppercase tracking-[0.28em]"
                 >
-                  Visit Monte i More →
+                  {copy.monte} →
                 </a>
                 <Link
                   to="/journal"
                   className="inline-flex items-center gap-3 pb-2 text-[12px] uppercase tracking-[0.28em] text-muted-foreground link-underline"
                 >
-                  Read more articles
+                  {copy.more}
                 </Link>
               </div>
             </section>

@@ -2,12 +2,36 @@ import { Link } from "@tanstack/react-router";
 import { useReveal } from "@/hooks/use-reveal";
 
 const questions = [
-  { q: "Is skiing in Montenegro actually worth it?", a: "Honest answer for first-timers, families, and Alps regulars.", to: "/journal" },
-  { q: "Rozaje vs. Austria — where do you get more?", a: "A side-by-side cost and experience comparison.", to: "/journal" },
-  { q: "How expensive is a week in Rozaje, really?", a: "We published our own receipts.", to: "/prices" },
-  { q: "Where should you actually stay?", a: "Neighbourhoods ranked by distance, quiet and value.", to: "/stay" },
-  { q: "Is there enough snow? Every year?", a: "What 10 winters of records actually show.", to: "/winter" },
-  { q: "Can you visit in summer too?", a: "The unexpected case for hiking the Prokletije.", to: "/summer" },
+  {
+    q: "Is skiing in Montenegro actually worth it?",
+    a: "Honest answer for first-timers, families, and Alps regulars.",
+    to: "/journal",
+  },
+  {
+    q: "Rožaje vs. Austria — where do you get more?",
+    a: "A side-by-side cost and experience comparison.",
+    to: "/journal",
+  },
+  {
+    q: "How expensive is a week in Rožaje, really?",
+    a: "We published our own receipts.",
+    to: "/prices",
+  },
+  {
+    q: "Where should you actually stay?",
+    a: "Neighbourhoods ranked by distance, quiet and value.",
+    to: "/stay",
+  },
+  {
+    q: "Is there enough snow? Every year?",
+    a: "What 10 winters of records actually show.",
+    to: "/winter",
+  },
+  {
+    q: "Can you visit in summer too?",
+    a: "The unexpected case for hiking the Prokletije.",
+    to: "/summer",
+  },
 ];
 
 export function PopularQuestions() {
