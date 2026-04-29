@@ -52,6 +52,12 @@ export const Route = createRootRoute({
       },
       { property: "og:type", content: "website" },
       { name: "twitter:card", content: "summary_large_image" },
+      { name: "twitter:title", content: "Rozaje 365 — Honest answers about northern Montenegro" },
+      { name: "description", content: "Rozaje Unveiled offers an honest, content-driven guide to northern Montenegro, blending luxury editorial design with SEO." },
+      { property: "og:description", content: "Rozaje Unveiled offers an honest, content-driven guide to northern Montenegro, blending luxury editorial design with SEO." },
+      { name: "twitter:description", content: "Rozaje Unveiled offers an honest, content-driven guide to northern Montenegro, blending luxury editorial design with SEO." },
+      { property: "og:image", content: "https://pub-bb2e103a32db4e198524a2e9ed8f35b4.r2.dev/4057c8bc-8b1f-407e-b896-db60c5caa260/id-preview-84d142da--8f28041f-dea3-499f-8743-b40c86009588.lovable.app-1777482620888.png" },
+      { name: "twitter:image", content: "https://pub-bb2e103a32db4e198524a2e9ed8f35b4.r2.dev/4057c8bc-8b1f-407e-b896-db60c5caa260/id-preview-84d142da--8f28041f-dea3-499f-8743-b40c86009588.lovable.app-1777482620888.png" },
     ],
     links: [{ rel: "stylesheet", href: appCss }, {
       rel: "preconnect",
