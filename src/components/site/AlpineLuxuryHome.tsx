@@ -296,6 +296,13 @@ export function AlpineLuxuryHome() {
                 {t.galleryIntro}
               </p>
               <div className="mt-6 h-px w-20 bg-[color:var(--gold)]" />
+              <div className="mt-5 flex items-center gap-2 text-[10px] uppercase tracking-[0.28em] text-muted-foreground md:hidden">
+                <span>scroll</span>
+                <svg width="14" height="14" viewBox="0 0 14 14" fill="none" aria-hidden>
+                  <line x1="1" y1="7" x2="13" y2="7" stroke="currentColor" strokeWidth="1.2" strokeLinecap="round"/>
+                  <polyline points="9,3 13,7 9,11" stroke="currentColor" strokeWidth="1.2" strokeLinecap="round" strokeLinejoin="round"/>
+                </svg>
+              </div>
             </div>
           </div>
           <div

@@ -1,6 +1,7 @@
 import { Link, useLocation } from "@tanstack/react-router";
 import { useEffect, useState } from "react";
 import { languages, useLanguage } from "@/lib/language";
+import { Logo } from "@/components/site/Logo";
 
 const navCopy = {
   de: {
@@ -71,11 +72,7 @@ export function Navbar() {
       }`}
     >
       <div className="mx-auto flex max-w-[1520px] items-center justify-between px-7 py-7 md:px-10 lg:px-11">
-        <Link to="/" className={`group flex items-baseline gap-2 ${tone}`}>
-          <span className="font-display text-3xl font-medium leading-none tracking-[-0.045em] md:text-4xl">
-            Rožaje 365
-          </span>
-        </Link>
+        <Logo light={isOverlay} size="md" />
 
         <nav className="hidden items-center gap-8 xl:gap-11 lg:flex">
           {copy.links.map((l) => (

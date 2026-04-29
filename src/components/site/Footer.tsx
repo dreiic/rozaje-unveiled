@@ -1,5 +1,6 @@
 import { Link } from "@tanstack/react-router";
 import { useLanguage } from "@/lib/language";
+import { Logo } from "@/components/site/Logo";
 
 const footerCopy = {
   de: {
@@ -66,6 +67,7 @@ export function Footer() {
       <div className="mx-auto max-w-[1400px] px-6 py-20 md:px-10">
         <div className="grid gap-12 md:grid-cols-12">
           <div className="md:col-span-5">
+            <Logo size="md" className="mb-8" asLink={false} />
             <div className="font-serif text-3xl leading-tight md:text-4xl">{copy.headline}</div>
             <p className="mt-6 max-w-md text-sm leading-relaxed text-muted-foreground">
               {copy.body}
