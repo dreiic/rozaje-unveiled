@@ -144,7 +144,7 @@ export function ArticlePage(p: ArticlePageProps) {
               {p.ctaBody && <p className="mt-4 text-foreground/70">{p.ctaBody}</p>}
               <div className="mt-8 flex flex-wrap gap-6">
                 <a
-                  href="#"
+                  href="/contact"
                   className="inline-flex items-center gap-3 border-b border-foreground pb-2 text-[12px] uppercase tracking-[0.28em]"
                 >
                   {copy.monte} →

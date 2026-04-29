@@ -1,5 +1,6 @@
 import { Link, useLocation } from "@tanstack/react-router";
 import { useEffect, useState } from "react";
+import logo from "@/assets/rozaje-logo.png";
 import { languages, useLanguage } from "@/lib/language";
 
 const navCopy = {
@@ -10,9 +11,10 @@ const navCopy = {
       { to: "/summer", label: "Sommer" },
       { to: "/stay", label: "Aufenthalt" },
       { to: "/prices", label: "Preise" },
+      { to: "/exploration", label: "Exploration" },
       { to: "/journal", label: "Journal" },
+      { to: "/contact", label: "Kontakt" },
     ],
-    about: "Über",
     menu: "Menü",
     close: "Schließen",
   },
@@ -23,9 +25,10 @@ const navCopy = {
       { to: "/summer", label: "Summer" },
       { to: "/stay", label: "Stay" },
       { to: "/prices", label: "Prices" },
+      { to: "/exploration", label: "Exploration" },
       { to: "/journal", label: "Journal" },
+      { to: "/contact", label: "Contact" },
     ],
-    about: "About",
     menu: "Menu",
     close: "Close",
   },
@@ -36,9 +39,10 @@ const navCopy = {
       { to: "/summer", label: "Ljeto" },
       { to: "/stay", label: "Smještaj" },
       { to: "/prices", label: "Cijene" },
+      { to: "/exploration", label: "Istraživanje" },
       { to: "/journal", label: "Journal" },
+      { to: "/contact", label: "Kontakt" },
     ],
-    about: "O nama",
     menu: "Meni",
     close: "Zatvori",
   },
@@ -53,7 +57,6 @@ export function Navbar() {
   const [open, setOpen] = useState(false);
   const isOverlay = isHome && !scrolled && !open;
   const tone = isOverlay ? "text-white" : "text-foreground";
-  const mutedTone = isOverlay ? "text-white/72" : "text-muted-foreground";
 
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 24);
@@ -70,19 +73,21 @@ export function Navbar() {
           : "bg-transparent"
       }`}
     >
-      <div className="mx-auto flex max-w-[1520px] items-center justify-between px-7 py-7 md:px-10 lg:px-11">
-        <Link to="/" className={`group flex items-baseline gap-2 ${tone}`}>
-          <span className="font-display text-3xl font-medium leading-none tracking-[-0.045em] md:text-4xl">
-            Rožaje 365
-          </span>
+      <div className="mx-auto flex max-w-[1520px] items-center justify-between px-5 py-5 md:px-10 lg:px-11">
+        <Link to="/" className={`group flex items-center ${tone}`} aria-label="Rožaje 365">
+          <img
+            src={logo}
+            alt="Rožaje 365"
+            className="h-12 w-[158px] object-contain object-left md:h-14 md:w-[184px]"
+          />
         </Link>
 
-        <nav className="hidden items-center gap-8 xl:gap-11 lg:flex">
+        <nav className="hidden items-center gap-5 xl:gap-8 lg:flex">
           {copy.links.map((l) => (
             <Link
               key={l.to}
               to={l.to}
-              className={`relative pb-2 text-[11px] uppercase tracking-[0.38em] transition-colors ${
+              className={`relative pb-2 text-[10px] uppercase tracking-[0.3em] transition-colors xl:text-[11px] ${
                 isOverlay
                   ? "text-white/78 hover:text-white"
                   : "text-foreground/72 hover:text-foreground"
@@ -96,16 +101,6 @@ export function Navbar() {
               {l.label}
             </Link>
           ))}
-          <a
-            href="/#project"
-            className={`pb-2 text-[11px] uppercase tracking-[0.38em] transition-colors ${
-              isOverlay
-                ? "text-white/78 hover:text-white"
-                : "text-foreground/72 hover:text-foreground"
-            }`}
-          >
-            {copy.about}
-          </a>
         </nav>
 
         <div className={`flex items-center gap-5 ${tone}`}>
@@ -130,57 +125,70 @@ export function Navbar() {
             ))}
           </div>
 
-          <div className={`hidden h-8 w-px md:block ${isOverlay ? "bg-white/18" : "bg-border"}`} />
-
           <button
             aria-label={open ? copy.close : copy.menu}
-            className={`flex items-center gap-4 text-[11px] uppercase tracking-[0.36em] ${tone}`}
+            className={`flex items-center gap-4 text-[11px] uppercase tracking-[0.36em] lg:hidden ${tone}`}
             onClick={() => setOpen((v) => !v)}
           >
             <span>{open ? copy.close : copy.menu}</span>
             <span className="flex h-4 w-7 flex-col justify-between" aria-hidden>
-              <span className={`h-px w-full ${isOverlay ? "bg-white" : "bg-foreground"}`} />
-              <span className={`h-px w-full ${isOverlay ? "bg-white" : "bg-foreground"}`} />
+              <span
+                className={`h-px w-full origin-center transition-transform duration-500 ${
+                  open ? "translate-y-[7.5px] rotate-45" : ""
+                } ${isOverlay ? "bg-white" : "bg-foreground"}`}
+              />
+              <span
+                className={`h-px w-full origin-center transition-transform duration-500 ${
+                  open ? "-translate-y-[7.5px] -rotate-45" : ""
+                } ${isOverlay ? "bg-white" : "bg-foreground"}`}
+              />
             </span>
           </button>
         </div>
       </div>
 
-      {open && (
-        <div className="border-t border-border/60 bg-background">
-          <div className="mx-auto flex max-w-[1520px] flex-col px-7 py-8 md:px-10 lg:px-11">
-            {copy.links.map((l) => (
-              <Link
-                key={l.to}
-                to={l.to}
-                onClick={() => setOpen(false)}
-                className="py-3 font-serif text-3xl"
+      <div
+        className={`overflow-hidden border-t border-border/60 bg-background transition-[max-height,opacity,transform] duration-700 ease-[cubic-bezier(0.22,1,0.36,1)] lg:hidden ${
+          open ? "max-h-[720px] translate-y-0 opacity-100" : "max-h-0 -translate-y-2 opacity-0"
+        }`}
+      >
+        <div className="mx-auto flex max-w-[1520px] flex-col px-7 py-8 md:px-10 lg:px-11">
+          {copy.links.map((l, index) => (
+            <Link
+              key={l.to}
+              to={l.to}
+              onClick={() => setOpen(false)}
+              className={`py-3 font-serif text-3xl transition-all duration-700 ${
+                open ? "translate-y-0 opacity-100" : "-translate-y-3 opacity-0"
+              }`}
+              style={{ transitionDelay: open ? `${index * 45}ms` : "0ms" }}
+            >
+              {l.label}
+            </Link>
+          ))}
+          <div
+            className={`mt-7 flex items-center gap-3 transition-all duration-700 md:hidden ${
+              open ? "translate-y-0 opacity-100" : "-translate-y-3 opacity-0"
+            }`}
+            style={{ transitionDelay: open ? `${copy.links.length * 45}ms` : "0ms" }}
+          >
+            {languages.map((item) => (
+              <button
+                key={item.code}
+                type="button"
+                onClick={() => setLanguage(item.code)}
+                className={`h-10 border px-4 text-[11px] uppercase tracking-[0.28em] ${
+                  language === item.code
+                    ? "border-foreground bg-foreground text-background"
+                    : "border-border text-muted-foreground"
+                }`}
               >
-                {l.label}
-              </Link>
+                {item.label}
+              </button>
             ))}
-            <a href="/#project" onClick={() => setOpen(false)} className="py-3 font-serif text-3xl">
-              {copy.about}
-            </a>
-            <div className="mt-7 flex items-center gap-3 md:hidden">
-              {languages.map((item) => (
-                <button
-                  key={item.code}
-                  type="button"
-                  onClick={() => setLanguage(item.code)}
-                  className={`h-10 border px-4 text-[11px] uppercase tracking-[0.28em] ${
-                    language === item.code
-                      ? "border-foreground bg-foreground text-background"
-                      : "border-border text-muted-foreground"
-                  }`}
-                >
-                  {item.label}
-                </button>
-              ))}
-            </div>
           </div>
         </div>
-      )}
+      </div>
     </header>
   );
 }

@@ -14,6 +14,8 @@ import { Route as SummerRouteImport } from './routes/summer'
 import { Route as StayRouteImport } from './routes/stay'
 import { Route as PricesRouteImport } from './routes/prices'
 import { Route as JournalRouteImport } from './routes/journal'
+import { Route as ExplorationRouteImport } from './routes/exploration'
+import { Route as ContactRouteImport } from './routes/contact'
 import { Route as IndexRouteImport } from './routes/index'
 
 const WinterRoute = WinterRouteImport.update({
@@ -41,6 +43,16 @@ const JournalRoute = JournalRouteImport.update({
   path: '/journal',
   getParentRoute: () => rootRouteImport,
 } as any)
+const ExplorationRoute = ExplorationRouteImport.update({
+  id: '/exploration',
+  path: '/exploration',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const ContactRoute = ContactRouteImport.update({
+  id: '/contact',
+  path: '/contact',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const IndexRoute = IndexRouteImport.update({
   id: '/',
   path: '/',
@@ -49,6 +61,8 @@ const IndexRoute = IndexRouteImport.update({
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
+  '/contact': typeof ContactRoute
+  '/exploration': typeof ExplorationRoute
   '/journal': typeof JournalRoute
   '/prices': typeof PricesRoute
   '/stay': typeof StayRoute
@@ -57,6 +71,8 @@ export interface FileRoutesByFullPath {
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
+  '/contact': typeof ContactRoute
+  '/exploration': typeof ExplorationRoute
   '/journal': typeof JournalRoute
   '/prices': typeof PricesRoute
   '/stay': typeof StayRoute
@@ -66,6 +82,8 @@ export interface FileRoutesByTo {
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/': typeof IndexRoute
+  '/contact': typeof ContactRoute
+  '/exploration': typeof ExplorationRoute
   '/journal': typeof JournalRoute
   '/prices': typeof PricesRoute
   '/stay': typeof StayRoute
@@ -74,12 +92,30 @@ export interface FileRoutesById {
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
-  fullPaths: '/' | '/journal' | '/prices' | '/stay' | '/summer' | '/winter'
+  fullPaths:
+    | '/'
+    | '/contact'
+    | '/exploration'
+    | '/journal'
+    | '/prices'
+    | '/stay'
+    | '/summer'
+    | '/winter'
   fileRoutesByTo: FileRoutesByTo
-  to: '/' | '/journal' | '/prices' | '/stay' | '/summer' | '/winter'
+  to:
+    | '/'
+    | '/contact'
+    | '/exploration'
+    | '/journal'
+    | '/prices'
+    | '/stay'
+    | '/summer'
+    | '/winter'
   id:
     | '__root__'
     | '/'
+    | '/contact'
+    | '/exploration'
     | '/journal'
     | '/prices'
     | '/stay'
@@ -89,6 +125,8 @@ export interface FileRouteTypes {
 }
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
+  ContactRoute: typeof ContactRoute
+  ExplorationRoute: typeof ExplorationRoute
   JournalRoute: typeof JournalRoute
   PricesRoute: typeof PricesRoute
   StayRoute: typeof StayRoute
@@ -133,6 +171,20 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof JournalRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/exploration': {
+      id: '/exploration'
+      path: '/exploration'
+      fullPath: '/exploration'
+      preLoaderRoute: typeof ExplorationRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/contact': {
+      id: '/contact'
+      path: '/contact'
+      fullPath: '/contact'
+      preLoaderRoute: typeof ContactRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/': {
       id: '/'
       path: '/'
@@ -145,6 +197,8 @@ declare module '@tanstack/react-router' {
 
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
+  ContactRoute: ContactRoute,
+  ExplorationRoute: ExplorationRoute,
   JournalRoute: JournalRoute,
   PricesRoute: PricesRoute,
   StayRoute: StayRoute,

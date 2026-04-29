@@ -1,4 +1,5 @@
 import { Link } from "@tanstack/react-router";
+import logo from "@/assets/rozaje-logo.png";
 import { useLanguage } from "@/lib/language";
 
 const footerCopy = {
@@ -14,12 +15,16 @@ const footerCopy = {
       "Alle Artikel",
     ],
     experience: "Erlebnis",
-    experienceLinks: ["Ferienwohnungen", "Skipässe", "Touren", "Quads", "Schneemobile"],
+    experienceLinks: [
+      { label: "Ferienwohnungen", to: "/stay" },
+      { label: "Skipässe", to: "/winter" },
+      { label: "Touren", to: "/exploration" },
+      { label: "Quads", to: "/exploration" },
+      { label: "Schneemobile", to: "/exploration" },
+    ],
     contact: "Kontakt",
-    imprint: "Impressum",
-    privacy: "Datenschutz",
+    contactLink: "Kontaktseite",
     copyright: "Ein alpines Projekt in Partnerschaft mit Monte i More.",
-    made: "Mit Ruhe in den Bergen entwickelt.",
   },
   en: {
     headline: "Rožaje 365 — written from the mountain, not from a brochure.",
@@ -33,12 +38,16 @@ const footerCopy = {
       "All articles",
     ],
     experience: "Experience",
-    experienceLinks: ["Apartments", "Ski passes", "Tours", "Quads", "Snowmobiles"],
+    experienceLinks: [
+      { label: "Apartments", to: "/stay" },
+      { label: "Ski passes", to: "/winter" },
+      { label: "Tours", to: "/exploration" },
+      { label: "Quads", to: "/exploration" },
+      { label: "Snowmobiles", to: "/exploration" },
+    ],
     contact: "Contact",
-    imprint: "Imprint",
-    privacy: "Privacy",
+    contactLink: "Contact page",
     copyright: "An alpine project in partnership with Monte i More.",
-    made: "Made slowly, in the mountains.",
   },
   me: {
     headline: "Rožaje 365 — iz planine, ne iz brošure.",
@@ -46,12 +55,16 @@ const footerCopy = {
     read: "Čitaj",
     links: ["Zima u Rožajama", "Ljeto i priroda", "Smještaj", "Cijene i realnost", "Svi članci"],
     experience: "Doživljaj",
-    experienceLinks: ["Apartmani", "Ski-pasovi", "Ture", "Quadovi", "Motorne sanke"],
+    experienceLinks: [
+      { label: "Apartmani", to: "/stay" },
+      { label: "Ski-pasovi", to: "/winter" },
+      { label: "Ture", to: "/exploration" },
+      { label: "Quadovi", to: "/exploration" },
+      { label: "Motorne sanke", to: "/exploration" },
+    ],
     contact: "Kontakt",
-    imprint: "Impresum",
-    privacy: "Privatnost",
+    contactLink: "Kontakt stranica",
     copyright: "Alpski projekat u partnerstvu sa Monte i More.",
-    made: "Rađeno polako, u planinama.",
   },
 } as const;
 
@@ -88,11 +101,11 @@ export function Footer() {
           <div className="md:col-span-2">
             <div className="eyebrow mb-5">{copy.experience}</div>
             <ul className="space-y-2 text-sm">
-              {copy.experienceLinks.map((label) => (
-                <li key={label}>
-                  <a href="#" className="link-underline">
-                    {label}
-                  </a>
+              {copy.experienceLinks.map((item) => (
+                <li key={item.label}>
+                  <Link to={item.to} className="link-underline">
+                    {item.label}
+                  </Link>
                 </li>
               ))}
             </ul>
@@ -103,19 +116,14 @@ export function Footer() {
             <ul className="space-y-2 text-sm">
               <li>Rožaje, Montenegro</li>
               <li>
-                <a href="mailto:hello@rozaje365.me" className="link-underline">
-                  hello@rozaje365.me
+                <a href="mailto:info@rozaje365.me" className="link-underline">
+                  info@rozaje365.me
                 </a>
               </li>
               <li>
-                <a href="#" className="link-underline">
-                  {copy.imprint}
-                </a>
-              </li>
-              <li>
-                <a href="#" className="link-underline">
-                  {copy.privacy}
-                </a>
+                <Link to="/contact" className="link-underline">
+                  {copy.contactLink}
+                </Link>
               </li>
             </ul>
           </div>
@@ -127,7 +135,19 @@ export function Footer() {
           <div>
             © {new Date().getFullYear()} Rožaje 365. {copy.copyright}
           </div>
-          <div className="tracking-[0.22em] uppercase">{copy.made}</div>
+          <div className="flex flex-wrap items-center gap-5">
+            <Link to="/" aria-label="Rožaje 365">
+              <img src={logo} alt="Rožaje 365" className="h-10 w-32 object-contain object-left" />
+            </Link>
+            <a
+              href="https://nextup-agency.vercel.app/"
+              target="_blank"
+              rel="noreferrer"
+              className="text-[9px] uppercase tracking-[0.22em] text-muted-foreground transition-colors hover:text-foreground"
+            >
+              powered by <span className="text-foreground">NextUp</span>
+            </a>
+          </div>
         </div>
       </div>
     </footer>

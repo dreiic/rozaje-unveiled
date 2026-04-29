@@ -56,6 +56,17 @@ const copy = {
     system:
       "Rožaje 365 schafft Aufmerksamkeit und Verbindung, ohne den Bezug zum Gesamtsystem zu verlieren. Die Marke übersetzt alpine Landschaft in Orientierung, Vertrauen und langfristige Projektlogik.",
     systemTags: ["Natur", "Winter", "Strategie"],
+    contactEyebrow: "Kontakt",
+    contactTitle: "Planen Sie Rožaje mit einem lokalen Einstieg.",
+    contactIntro:
+      "Schreiben Sie uns für Aufenthalte, Wintererlebnisse, Gruppenreisen oder Projektgespräche. Die Anfrage geht direkt an info@rozaje365.me.",
+    contactName: "Name",
+    contactEmail: "E-Mail",
+    contactMessage: "Nachricht",
+    contactSubmit: "Anfrage senden",
+    mapLabel: "Rožaje, Nordmontenegro",
+    mapHint: "Gebirgsregion zwischen Hajla, Tälern und winterlichen Routen.",
+    mapCta: "Karte",
     final: "Für Menschen, die Montenegro nicht nur besuchen, sondern verstehen wollen.",
     finalCta: "Journal öffnen",
   },
@@ -108,6 +119,17 @@ const copy = {
     system:
       "Rožaje 365 creates attention and connection without losing its place in the wider system. The brand translates alpine landscape into orientation, trust and long-term project logic.",
     systemTags: ["Nature", "Winter", "Strategy"],
+    contactEyebrow: "Contact",
+    contactTitle: "Plan Rožaje with a local point of entry.",
+    contactIntro:
+      "Write to us for stays, winter experiences, group trips or project conversations. The request goes directly to info@rozaje365.me.",
+    contactName: "Name",
+    contactEmail: "Email",
+    contactMessage: "Message",
+    contactSubmit: "Send request",
+    mapLabel: "Rožaje, northern Montenegro",
+    mapHint: "Mountain region between Hajla, valleys and winter routes.",
+    mapCta: "Map",
     final: "For people who want to understand Montenegro, not only visit it.",
     finalCta: "Open journal",
   },
@@ -159,6 +181,17 @@ const copy = {
     system:
       "Rožaje 365 gradi pažnju i povezanost, a ostaje vezan za širi sistem. Brend prevodi alpski pejzaž u orijentaciju, povjerenje i dugoročnu projektnu logiku.",
     systemTags: ["Priroda", "Zima", "Strategija"],
+    contactEyebrow: "Kontakt",
+    contactTitle: "Planirajte Rožaje uz lokalnu ulaznu tačku.",
+    contactIntro:
+      "Pišite nam za smještaj, zimske doživljaje, grupna putovanja ili projektne razgovore. Upit ide direktno na info@rozaje365.me.",
+    contactName: "Ime",
+    contactEmail: "E-mail",
+    contactMessage: "Poruka",
+    contactSubmit: "Pošalji upit",
+    mapLabel: "Rožaje, sjever Crne Gore",
+    mapHint: "Planinska regija između Hajle, dolina i zimskih ruta.",
+    mapCta: "Mapa",
     final: "Za ljude koji Crnu Goru ne žele samo da posjete, već da je razumiju.",
     finalCta: "Otvori journal",
   },
@@ -211,8 +244,16 @@ export function AlpineLuxuryHome() {
   const t = copy[language];
   const revealRef = useReveal<HTMLDivElement>();
   const [galleryRef, galleryProgress] = useScrollProgress<HTMLElement>();
+  const [compactGallery, setCompactGallery] = useState(false);
 
-  const galleryOffset = `${-galleryProgress * 72}vw`;
+  useEffect(() => {
+    const update = () => setCompactGallery(window.innerWidth < 768);
+    update();
+    window.addEventListener("resize", update);
+    return () => window.removeEventListener("resize", update);
+  }, []);
+
+  const galleryOffset = `${-galleryProgress * (compactGallery ? 545 : 208)}vw`;
 
   return (
     <div ref={revealRef} className="bg-background">
@@ -283,7 +324,11 @@ export function AlpineLuxuryHome() {
         </div>
       </section>
 
-      <section id="experience-world" ref={galleryRef} className="relative h-[260vh] bg-paper">
+      <section
+        id="experience-world"
+        ref={galleryRef}
+        className="relative h-[420vh] bg-paper md:h-[360vh]"
+      >
         <div className="sticky top-0 flex h-screen items-center overflow-hidden">
           <div className="pointer-events-none absolute inset-y-0 left-0 z-10 w-[42vw] bg-gradient-to-r from-paper via-paper/86 to-transparent max-md:hidden" />
           <div className="absolute left-5 right-5 top-24 z-20 max-w-[520px] md:left-12 md:right-auto lg:left-16">

@@ -1,11 +1,32 @@
+import { Link } from "@tanstack/react-router";
 import { useReveal } from "@/hooks/use-reveal";
 import { rozajeImages } from "@/assets/rozaje365";
 
 const cards = [
-  { title: "Apartments", note: "Walking distance to the lifts.", img: rozajeImages.townValley },
-  { title: "Ski passes", note: "Hajla resort, full season.", img: rozajeImages.lift },
-  { title: "Tours", note: "Guided routes through Prokletije.", img: rozajeImages.snowRidge },
-  { title: "Quads & Snowmobiles", note: "Offroad, year round.", img: rozajeImages.winterRoad },
+  {
+    title: "Apartments",
+    note: "Walking distance to the lifts.",
+    img: rozajeImages.townValley,
+    to: "/stay",
+  },
+  {
+    title: "Ski passes",
+    note: "Hajla resort, full season.",
+    img: rozajeImages.lift,
+    to: "/winter",
+  },
+  {
+    title: "Tours",
+    note: "Guided routes through Prokletije.",
+    img: rozajeImages.snowRidge,
+    to: "/exploration",
+  },
+  {
+    title: "Quads & Snowmobiles",
+    note: "Offroad, year round.",
+    img: rozajeImages.winterRoad,
+    to: "/exploration",
+  },
 ];
 
 export function ExperienceSection() {
@@ -28,9 +49,9 @@ export function ExperienceSection() {
 
         <div className="reveal grid grid-cols-1 gap-px bg-background/15 sm:grid-cols-2 lg:grid-cols-4">
           {cards.map((c) => (
-            <a
+            <Link
               key={c.title}
-              href="#"
+              to={c.to}
               className="group relative block overflow-hidden bg-foreground"
             >
               <div className="aspect-[4/5] overflow-hidden">
@@ -50,7 +71,7 @@ export function ExperienceSection() {
                   →
                 </span>
               </div>
-            </a>
+            </Link>
           ))}
         </div>
 
@@ -59,7 +80,7 @@ export function ExperienceSection() {
             We don't push offers inside articles. We just leave the door open — softly — at the end.
           </p>
           <a
-            href="#"
+            href="/contact"
             className="inline-flex items-center gap-3 border-b border-background/60 pb-2 text-[12px] uppercase tracking-[0.28em]"
           >
             Visit Monte i More <span>→</span>
