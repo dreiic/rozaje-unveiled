@@ -29,6 +29,9 @@ const articleCopy = {
     defaultCtaAccent: "finden Sie Ferienwohnungen, Skipässe und Touren über Monte i More.",
     monte: "Monte i More besuchen",
     more: "Weitere Artikel lesen",
+    contactLead:
+      "Falls Sie nähere oder spezifischere Informationen suchen, schreiben Sie uns gerne",
+    contactLink: "hier",
   },
   en: {
     pros: "In its favour",
@@ -38,6 +41,9 @@ const articleCopy = {
     defaultCtaAccent: "you can find apartments, ski passes and tours through Monte i More.",
     monte: "Visit Monte i More",
     more: "Read more articles",
+    contactLead:
+      "If you are looking for more detailed or specific information, feel free to write to us",
+    contactLink: "here",
   },
   me: {
     pros: "Šta govori u prilog",
@@ -47,6 +53,8 @@ const articleCopy = {
     defaultCtaAccent: "apartmane, ski-pasove i ture možete pronaći kroz Monte i More.",
     monte: "Posjeti Monte i More",
     more: "Čitaj još članaka",
+    contactLead: "Ako tražite detaljnije ili konkretnije informacije, slobodno nam pišite",
+    contactLink: "ovdje",
   },
 } as const;
 
@@ -142,12 +150,19 @@ export function ArticlePage(p: ArticlePageProps) {
                 <span className="italic text-[color:var(--gold)]">{copy.defaultCtaAccent}</span>
               </p>
               {p.ctaBody && <p className="mt-4 text-foreground/70">{p.ctaBody}</p>}
+              <p className="mt-5 max-w-2xl text-sm leading-relaxed text-foreground/68">
+                {copy.contactLead}{" "}
+                <Link to="/contact" className="link-underline text-foreground">
+                  {copy.contactLink}
+                </Link>
+                .
+              </p>
               <div className="mt-8 flex flex-wrap gap-6">
-                <a
-                  href="/contact"
-                  className="inline-flex items-center gap-3 border-b border-foreground pb-2 text-[12px] uppercase tracking-[0.28em]"
-                >
-                  {copy.monte} →
+                <a href="/contact" className="booking-cta">
+                  <span>{copy.monte}</span>
+                  <span className="booking-cta-arrow" aria-hidden>
+                    →
+                  </span>
                 </a>
                 <Link
                   to="/journal"

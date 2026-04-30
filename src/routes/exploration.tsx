@@ -1,17 +1,6 @@
 import { createFileRoute } from "@tanstack/react-router";
-import {
-  Bike,
-  Compass,
-  MapPin,
-  Mountain,
-  ShieldCheck,
-  Snowflake,
-  UsersRound,
-  Wind,
-  Wrench,
-} from "lucide-react";
+import { Compass, ShieldCheck, Snowflake, Wrench } from "lucide-react";
 import { rozajeImages } from "@/assets/rozaje365";
-import ceremonyImage from "@/assets/exploration-ceremony-real.jpg";
 import quadImage from "@/assets/exploration-quad-real.jpg";
 import safetyImage from "@/assets/exploration-safety-real.jpg";
 import snowmobileImage from "@/assets/exploration-snowmobile-real.jpg";
@@ -20,15 +9,15 @@ import { useLanguage } from "@/lib/language";
 
 const copy = {
   de: {
-    metaTitle: "Montenegro Exploration — Motorschlitten & Abenteuer | Rožaje 365",
+    metaTitle: "Montenegro Exploration — Schneemobil & Abenteuer | Rožaje 365",
     metaDescription:
-      "Motorisierter Wintersport, unentdeckte Pfade, moderne Ausrüstung und Gruppen-Erlebnisse in den Bergen von Rožaje.",
+      "Motorisierter Wintersport, unentdeckte Pfade, moderne Ausrüstung und geführte Abenteuer in den Bergen von Rožaje.",
     eyebrow: "Montenegro Exploration",
     title: "Die Wildnis rufen hören: Abenteuer in Rožaje",
     subtitle: "Der wahre Adrenalinkick beginnt hier, wo die Zivilisation endet.",
     intro:
       "In den ungezähmten Gipfeln von Rožaje finden Sie keinen Massentourismus. Hier begegnen Sie der rauen Kraft der Natur, gefrorenen Landschaften und der Freiheit, Ihre eigenen Spuren im frischen Pulverschnee zu hinterlassen. Es ist der Ort für jene, die das Echte suchen.",
-    snowmobileTitle: "Motorschlitten",
+    snowmobileTitle: "Schneemobil",
     snowmobileSubtitle: "Motorisierter Wintersport",
     snowmobileBody:
       "In den unberührten Bergen von Rožaje definieren wir Winterabenteuer neu. Motorisierter Wintersport bedeutet bei uns nicht Lärm, sondern der exklusive Zugang zu unberührten Gipfeln und tief verschneiten Tälern, die sonst unerreichbar wären. Erleben Sie die perfekte Symbiose aus moderner Technik und der rauen Stille der montenegrinischen Natur.",
@@ -55,42 +44,16 @@ const copy = {
       },
       {
         title: "Moderne Flotte",
-        text: "Unsere Quads und Motorschlitten der neuesten Generation garantieren Leistung und Zuverlässigkeit.",
+        text: "Unsere Quads und Schneemobile der neuesten Generation garantieren Leistung und Zuverlässigkeit.",
       },
       {
         title: "Sicherheits-Garantie",
         text: "Regelmäßige Wartung und professionelles GPS-Tracking für alle Exkursionen.",
       },
     ],
-    groupsEyebrow: "Erlebnisse für Gruppen",
-    horizonsTitle: "Erweitere deinen Horizont",
-    horizons: [
-      {
-        title: "Paragliding über Smiljevica",
-        text: "Erlebe das Hajla-Massiv aus einer völlig neuen Perspektive und spüre die absolute Freiheit unter freiem Himmel.",
-      },
-      {
-        title: "Wildes Mountainbiking",
-        text: "Anspruchsvolle Trails durch unberührte Urwälder führen dich zu den verstecktesten Gipfeln der Region.",
-      },
-      {
-        title: "Klettern an Kalkstein",
-        text: "Die schroffen Felsen der Hajla-Region bieten vertikale Erlebnisse der Extraklasse für Mutige.",
-      },
-    ],
-    groups: [
-      {
-        title: "Firmen-Retreats & Team-Building",
-        text: "Fördern Sie die Zusammenarbeit in der inspirierenden Abgeschiedenheit der Hajla-Gipfel.",
-      },
-      {
-        title: "Private Feiern & Hochzeiten",
-        text: "Sagen Sie Ja in einer Kulisse, die so zeitlos ist wie Ihr Versprechen. Exklusive Locations.",
-      },
-    ],
     finalTitle: "Ihr Abenteuer erwartet Sie.",
     finalBody:
-      "Rožaje365 ist Ihr Fenster zu einer unentdeckten Welt. Wir laden Sie ein, die Stille der Berge und die authentische Kraft der Natur neu zu definieren. Ein Erlebnis, das bleibt – 365 Tage im Jahr.",
+      "Rožaje 365 ist Ihr Fenster zu einer unentdeckten Welt. Wir laden Sie ein, die Stille der Berge und die authentische Kraft der Natur neu zu definieren. Ein Erlebnis, das bleibt – 365 Tage im Jahr.",
     bookingTitle: "Bereit für Ihr Abenteuer?",
     bookingBody:
       "Buchen Sie heute Ihr privates Erlebnis in Montenegro. Wir führen Sie zu versteckten Orten, fernab des Massentourismus.",
@@ -100,7 +63,7 @@ const copy = {
   en: {
     metaTitle: "Montenegro Exploration — Snowmobiles & Adventure | Rožaje 365",
     metaDescription:
-      "Motorized winter sports, undiscovered paths, modern gear and group experiences in the mountains of Rožaje.",
+      "Motorized winter sports, undiscovered paths, modern gear and guided adventures in the mountains of Rožaje.",
     eyebrow: "Montenegro Exploration",
     title: "Hearing the Call of the Wild: Adventures in Rožaje",
     subtitle: "The true adrenaline kick begins here, where civilization ends.",
@@ -140,35 +103,9 @@ const copy = {
         text: "Regular maintenance and professional GPS tracking for all excursions.",
       },
     ],
-    groupsEyebrow: "Experiences for Groups",
-    horizonsTitle: "Expand Your Horizons",
-    horizons: [
-      {
-        title: "Paragliding over Smiljevica",
-        text: "Experience the Hajla massif from a completely new perspective and feel absolute freedom under the open sky.",
-      },
-      {
-        title: "Wild Mountain Biking",
-        text: "Challenging trails through untouched primeval forests lead you to the most hidden peaks of the region.",
-      },
-      {
-        title: "Limestone Climbing",
-        text: "The rugged rocks of the Hajla region offer top-class vertical experiences for the brave.",
-      },
-    ],
-    groups: [
-      {
-        title: "Corporate Retreats & Team-Building",
-        text: "Foster collaboration in the inspiring seclusion of the Hajla peaks.",
-      },
-      {
-        title: "Private Celebrations & Weddings",
-        text: "Say 'I do' in a setting as timeless as your promise. Exclusive locations.",
-      },
-    ],
     finalTitle: "Your adventure awaits.",
     finalBody:
-      "Rožaje365 is your window to an undiscovered world. We invite you to redefine the silence of the mountains and the power of nature. An experience that stays – 365 days a year.",
+      "Rožaje 365 is your window to an undiscovered world. We invite you to redefine the silence of the mountains and the power of nature. An experience that stays – 365 days a year.",
     bookingTitle: "Ready for your adventure?",
     bookingBody:
       "Book your private experience in Montenegro today. We guide you to hidden places, far from mass tourism.",
@@ -178,7 +115,7 @@ const copy = {
   me: {
     metaTitle: "Crna Gora istraživanje — Motorne sanke i avantura | Rožaje 365",
     metaDescription:
-      "Motorizovani zimski sportovi, neotkrivene staze, moderna oprema i grupna iskustva u planinama Rožaja.",
+      "Motorizovani zimski sportovi, neotkrivene staze, moderna oprema i vođene avanture u planinama Rožaja.",
     eyebrow: "Crna Gora istraživanje",
     title: "Slušajući poziv divljine: Avanture u Rožaju",
     subtitle: "Pravi adrenalinski nalet počinje ovdje, gdje se civilizacija završava.",
@@ -218,35 +155,9 @@ const copy = {
         text: "Redovno održavanje i profesionalno GPS praćenje za sve ekskurzije.",
       },
     ],
-    groupsEyebrow: "Iskustva za grupe",
-    horizonsTitle: "Proširite svoje vidike",
-    horizons: [
-      {
-        title: "Paraglajding iznad Smiljevice",
-        text: "Doživite masiv Hajle iz potpuno nove perspektive i osjetite apsolutnu slobodu pod otvorenim nebom.",
-      },
-      {
-        title: "Divlji planinski biciklizam",
-        text: "Zahtjevne staze kroz netaknute prašume vode vas do najskrivenijih vrhova u regionu.",
-      },
-      {
-        title: "Penjanje na krečnjaku",
-        text: "Krševite stijene Hajla-regiona nude vrhunska vertikalna iskustva za hrabre.",
-      },
-    ],
-    groups: [
-      {
-        title: "Tim-bilding i korporativni događaji",
-        text: "Podstaknite saradnju u inspirativnoj osami vrhova Hajle.",
-      },
-      {
-        title: "Privatne proslave i vjenčanja",
-        text: "Recite da u okruženju vanvremenskom kao vaše obećanje. Ekskluzivne lokacije.",
-      },
-    ],
     finalTitle: "Vaša avantura vas čeka.",
     finalBody:
-      "Rožaje365 je vaš prozor u neotkriveni svijet. Pozivamo vas da ponovo definišete tišinu planina i moć prirode. Iskustvo koje ostaje – 365 dana u godini.",
+      "Rožaje 365 je vaš prozor u neotkriveni svijet. Pozivamo vas da ponovo definišete tišinu planina i moć prirode. Iskustvo koje ostaje – 365 dana u godini.",
     bookingTitle: "Spremni za vašu avanturu?",
     bookingBody:
       "Rezervišite svoje privatno iskustvo u Crnoj Gori danas. Vodimo vas do skrivenih mjesta, daleko od masovnog turizma.",
@@ -256,7 +167,6 @@ const copy = {
 } as const;
 
 const cardIcons = [Snowflake, Wrench, ShieldCheck] as const;
-const horizonIcons = [Wind, Bike, Mountain] as const;
 
 export const Route = createFileRoute("/exploration")({
   head: () => ({
@@ -430,79 +340,6 @@ function Exploration() {
         </div>
       </section>
 
-      <section className="bg-background py-24 md:py-32">
-        <div className="mx-auto max-w-[1500px] px-6 md:px-12">
-          <div className="reveal mb-14 grid gap-8 md:grid-cols-12">
-            <div className="eyebrow md:col-span-3">{t.eyebrow}</div>
-            <h2 className="font-serif text-[clamp(3rem,7vw,7rem)] leading-[0.9] md:col-span-9">
-              {t.horizonsTitle}
-            </h2>
-          </div>
-          <div className="grid gap-px bg-border md:grid-cols-3">
-            {t.horizons.map((item, index) => {
-              const Icon = horizonIcons[index];
-              const image = [rozajeImages.snowRidge, rozajeImages.winterForest, rozajeImages.lift][
-                index
-              ];
-              return (
-                <article key={item.title} className="reveal bg-background">
-                  <div className="aspect-[4/5] overflow-hidden">
-                    <img
-                      src={image}
-                      alt={item.title}
-                      className="h-full w-full object-cover transition-transform duration-[1400ms] hover:scale-[1.04]"
-                      loading="lazy"
-                    />
-                  </div>
-                  <div className="p-7">
-                    <Icon className="mb-8 h-6 w-6 text-[color:var(--gold)]" strokeWidth={1.4} />
-                    <h3 className="font-serif text-4xl leading-none">{item.title}</h3>
-                    <p className="mt-5 text-sm leading-relaxed text-muted-foreground">
-                      {item.text}
-                    </p>
-                  </div>
-                </article>
-              );
-            })}
-          </div>
-        </div>
-      </section>
-
-      <section className="relative overflow-hidden bg-ink py-24 text-white md:py-32">
-        <img
-          src={ceremonyImage}
-          alt={t.groupsEyebrow}
-          className="absolute inset-0 h-full w-full object-cover opacity-24"
-          loading="lazy"
-        />
-        <div className="relative z-10 mx-auto grid max-w-[1500px] gap-10 px-6 md:grid-cols-12 md:px-12">
-          <div className="reveal md:col-span-4">
-            <div className="eyebrow mb-6 text-white/62">{t.groupsEyebrow}</div>
-            <div className="flex items-center gap-4 text-white/72">
-              <UsersRound className="h-6 w-6" strokeWidth={1.4} />
-              <Mountain className="h-6 w-6" strokeWidth={1.4} />
-              <MapPin className="h-6 w-6" strokeWidth={1.4} />
-            </div>
-          </div>
-          <div className="reveal md:col-span-8">
-            <div className="grid gap-8 md:grid-cols-2">
-              {t.groups.map((group) => (
-                <div key={group.title} className="border border-white/16 bg-white/[0.04] p-8">
-                  <h3 className="font-serif text-4xl leading-none">{group.title}</h3>
-                  <p className="mt-6 text-sm leading-relaxed text-white/68">{group.text}</p>
-                </div>
-              ))}
-            </div>
-            <a
-              href="/contact"
-              className="mt-10 inline-flex border-b border-white pb-2 text-[11px] uppercase tracking-[0.3em]"
-            >
-              {t.cta}
-            </a>
-          </div>
-        </div>
-      </section>
-
       <section className="relative min-h-screen overflow-hidden bg-ink text-white">
         <img
           src={rozajeImages.snowRidge}
@@ -524,11 +361,11 @@ function Exploration() {
             <Compass className="mb-8 h-7 w-7 text-[color:var(--gold)]" strokeWidth={1.4} />
             <h3 className="font-serif text-4xl leading-none">{t.bookingTitle}</h3>
             <p className="mt-5 text-sm leading-relaxed text-white/68">{t.bookingBody}</p>
-            <a
-              href="/contact"
-              className="mt-8 inline-flex border-b border-white pb-2 text-[11px] uppercase tracking-[0.3em]"
-            >
-              {t.cta}
+            <a href="/contact" className="booking-cta booking-cta-light mt-8">
+              <span>{t.cta}</span>
+              <span className="booking-cta-arrow" aria-hidden>
+                →
+              </span>
             </a>
           </div>
         </div>

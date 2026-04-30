@@ -10,7 +10,7 @@ const copy = {
     eyebrow: "Kapitel II · Winter",
     title: "Lohnt sich Skifahren in Montenegro wirklich?",
     intro:
-      "Kurz gesagt: ja, wenn man weiß, wofür man kommt. Rožaje ist nicht St. Anton. Es ist ruhiger, kleiner und kostet nur einen Bruchteil.",
+      "Ja – wenn man dem Massentourismus entfliehen und Skifahren wieder so erleben will, wie es einmal gedacht war. Rožaje ist nicht St. Anton. Es ist ruhiger, kleiner und kostet nur einen Bruchteil.",
     pros: [
       "Zuverlässiger Schnee von Dezember bis April",
       "Tagespass unter 15 Euro, Kinder zum halben Preis",

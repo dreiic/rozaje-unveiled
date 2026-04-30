@@ -79,11 +79,11 @@ export function ExperienceSection() {
           <p className="max-w-md text-sm text-background/60">
             We don't push offers inside articles. We just leave the door open — softly — at the end.
           </p>
-          <a
-            href="/contact"
-            className="inline-flex items-center gap-3 border-b border-background/60 pb-2 text-[12px] uppercase tracking-[0.28em]"
-          >
-            Visit Monte i More <span>→</span>
+          <a href="/contact" className="booking-cta booking-cta-light">
+            <span>Visit Monte i More</span>
+            <span className="booking-cta-arrow" aria-hidden>
+              →
+            </span>
           </a>
         </div>
       </div>

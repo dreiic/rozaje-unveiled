@@ -188,11 +188,11 @@ function Contact() {
                 className="mt-3 w-full resize-none border border-border bg-paper px-4 py-3 text-base normal-case tracking-normal outline-none transition-colors focus:border-foreground"
               />
             </label>
-            <button
-              type="submit"
-              className="mt-7 w-full bg-ink px-6 py-4 text-[11px] uppercase tracking-[0.28em] text-white transition-colors hover:bg-foreground"
-            >
-              {t.submit}
+            <button type="submit" className="booking-cta mt-7 w-full">
+              <span>{t.submit}</span>
+              <span className="booking-cta-arrow" aria-hidden>
+                →
+              </span>
             </button>
           </form>
         </div>

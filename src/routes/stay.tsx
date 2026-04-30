@@ -28,7 +28,7 @@ const copy = {
         body: (
           <p>
             Centar für Cafés und Zugang, Bandžov für Ruhe und Nähe zum Skigebiet, Carine für
-            Familien. Jeder Bereich ist höchstens zehn Minuten zu Fuß vom nächsten entfernt.
+            Familien. Alle Bereiche liegen zu Fuß maximal zehn Minuten voneinander entfernt.
           </p>
         ),
       },
