@@ -14,6 +14,9 @@ const copy = {
     title: "Planen Sie Rožaje mit einem lokalen Einstieg.",
     intro:
       "Schreiben Sie uns für Aufenthalte, Wintererlebnisse, Gruppenreisen oder Projektgespräche. Die Anfrage geht direkt an info@rozaje365.me.",
+    monteText:
+      "Wenn Sie direkt über Monte i More buchen möchten, wird hier der Zugang zur Buchungsseite ergänzt.",
+    monteCta: "Monte i More besuchen",
     name: "Name",
     email: "E-Mail",
     message: "Nachricht",
@@ -31,6 +34,9 @@ const copy = {
     title: "Plan Rožaje with a local point of entry.",
     intro:
       "Write to us for stays, winter experiences, group trips or project conversations. The request goes directly to info@rozaje365.me.",
+    monteText:
+      "If you would like to book directly through Monte i More, access to the booking page will be added here.",
+    monteCta: "Visit Monte i More",
     name: "Name",
     email: "Email",
     message: "Message",
@@ -48,6 +54,9 @@ const copy = {
     title: "Planirajte Rožaje uz lokalnu ulaznu tačku.",
     intro:
       "Pišite nam za smještaj, zimske doživljaje, grupna putovanja ili projektne razgovore. Upit ide direktno na info@rozaje365.me.",
+    monteText:
+      "Ako želite rezervisati direktno preko Monte i More, ovdje će biti dodat pristup stranici za rezervacije.",
+    monteCta: "Posjeti Monte i More",
     name: "Ime",
     email: "E-mail",
     message: "Poruka",
@@ -79,15 +88,30 @@ function Contact() {
 
   return (
     <div ref={ref} className="bg-background">
-      <header className="mx-auto max-w-[1100px] px-6 pt-20 md:px-10 md:pt-32">
-        <div className="reveal">
-          <div className="eyebrow mb-6">{t.eyebrow}</div>
-          <h1 className="font-serif text-[40px] leading-[1.05] text-balance md:text-[72px]">
-            {t.title}
-          </h1>
-          <p className="mt-8 max-w-2xl text-lg leading-relaxed text-foreground/75 md:text-xl">
-            {t.intro}
-          </p>
+      <header className="mx-auto max-w-[1500px] px-6 pt-20 md:px-12 md:pt-32">
+        <div className="reveal grid gap-8 md:grid-cols-12 md:items-end">
+          <div className="md:col-span-8">
+            <div className="eyebrow mb-6">{t.eyebrow}</div>
+            <h1 className="font-serif text-[40px] leading-[1.05] text-balance md:text-[72px]">
+              {t.title}
+            </h1>
+            <p className="mt-8 max-w-3xl text-lg leading-relaxed text-foreground/75 md:text-xl">
+              {t.intro}
+            </p>
+          </div>
+          <div className="md:col-span-4">
+            <p className="max-w-sm text-sm leading-relaxed text-foreground/64">{t.monteText}</p>
+            <button
+              type="button"
+              className="booking-cta mt-5 w-full md:w-auto"
+              aria-disabled="true"
+            >
+              <span>{t.monteCta}</span>
+              <span className="booking-cta-arrow" aria-hidden>
+                →
+              </span>
+            </button>
+          </div>
         </div>
       </header>
 
