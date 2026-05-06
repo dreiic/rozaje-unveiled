@@ -267,11 +267,11 @@ export function AlpineLuxuryHome() {
       />
 
       <section id="project" className="border-y border-border bg-paper">
-        <div className="mx-auto grid max-w-[1500px] gap-14 px-6 py-24 md:grid-cols-12 md:px-12 md:py-32">
-          <div className="reveal md:col-span-4">
+        <div className="mx-auto max-w-[1500px] px-6 py-24 md:px-12 md:py-32">
+          <div className="reveal mb-8">
             <div className="eyebrow">Rožaje 365</div>
           </div>
-          <div className="reveal md:col-span-8">
+          <div className="reveal">
             <p className="font-serif text-[clamp(2.4rem,6vw,6.8rem)] leading-[0.94] text-foreground">
               {t.statement}
             </p>

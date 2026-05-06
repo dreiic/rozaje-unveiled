@@ -23,17 +23,17 @@ const copy = {
       "In den unberührten Bergen von Rožaje definieren wir Winterabenteuer neu. Motorisierter Wintersport bedeutet bei uns nicht Lärm, sondern der exklusive Zugang zu unberührten Gipfeln und tief verschneiten Tälern, die sonst unerreichbar wären. Erleben Sie die perfekte Symbiose aus moderner Technik und der rauen Stille der montenegrinischen Natur.",
     quadTitle: "Quad-Touren & Verleih",
     quadBody:
-      "Entdecken Sie die unberührte Wildnis von Rožaje auf vier Rädern. Unsere geführten Quad-Touren führen Sie tief in die Berglandschaften, vorbei an kristallklaren Quellen und zu atemberaubenden Aussichtspunkten auf der Hajla. Für erfahrene Abenteurer bieten wir einen flexiblen Einzelverleih modernster Fahrzeuge, um die Region in eigenem Tempo zu erkunden.",
+      "Erkunden Sie die faszinierende, naturbelassene Landschaft von Rožaje auf vier Rädern. Unsere geführten Quad-Touren führen Sie tief in die Berglandschaften, vorbei an kristallklaren Quellen und zu atemberaubenden Aussichtspunkten des Hajlas. Für erfahrene Abenteurer bieten wir einen flexiblen Einzelverleih modernster Fahrzeuge, um die Region in eigenem Tempo zu erkunden.",
     safetyTitle: "Sicherheit im Gelände",
     safetyBody:
       "Ihre Sicherheit ist unser höchstes Gebot. Jede Expedition in die unberührte Wildnis von Rožaje wird von staatlich zertifizierten Bergführern geleitet, die über jahrelange Erfahrung und tiefgreifende Ortskenntnisse verfügen.",
     safetySecond:
-      "Wir nutzen modernste Sicherheitsausrüstung und GPS-Tracking, um ein Höchstmaß an Schutz zu garantieren. Vertrauen Sie auf Experten, während Sie die Freiheit der Berge genießen.",
+      "Wir nutzen modernste Sicherheitsausrüstung und GPS-Tracking, um ein Höchstmaß an Schutz zu garantieren. Vertrauen Sie auf unsere Erfahrung, während Sie die Freiheit der Berge genießen.",
     pathsTitle: "Unentdeckte Pfade",
     pathsBody:
-      "In den Bergen rund um Rožaje finden Sie Landschaften, die in ihrer Urwüchsigkeit in Europa ihresgleichen suchen. Von den schroffen Gipfeln der Hajla bis zu den sanften Hochebenen erzählt jede Route eine Geschichte der Stille.",
+      "In den Bergen rund um Rožaje finden Sie Landschaften, die in ihrer Urwüchsigkeit in Europa ihresgleichen suchen. Von den schroffen Gipfeln des Hajlas bis zu den sanften Hochebenen erzählt jede Route eine Geschichte der Stille.",
     pathsSecond:
-      "Unsere markierten Wanderwege führen durch dichte Urwälder und über klare Gebirgsbäche. Ein Paradies für Fotografen und Abenteurer, die das authentische Montenegro suchen.",
+      "Unsere markierten Wanderwege führen durch stark bewaldete Regionen und über klare Gebirgsbäche. Ein Paradies für Fotografen und Abenteurer, die das authentische Montenegro suchen.",
     gearTitle: "Technik & Ausrüstung",
     gearBody:
       "Präzision in jeder Kurve. Unsere Ausrüstung kombiniert modernste Technik mit den höchsten Sicherheitsstandards der Region.",
@@ -75,17 +75,17 @@ const copy = {
       "In the untouched mountains of Rožaje, we redefine winter adventure. For us, motorized winter sports signify not noise, but exclusive access to pristine peaks and deep snow-covered valleys that would otherwise remain unreachable. Experience the perfect symbiosis of state-of-the-art technology and the raw silence of Montenegrin nature.",
     quadTitle: "Quad Tours & Rental",
     quadBody:
-      "Discover the untouched wilderness of Rožaje on four wheels. Our guided quad tours take you deep into the mountain landscapes, past crystal-clear springs and to breathtaking viewpoints on Mount Hajla. For experienced adventurers, we offer flexible individual rentals of the latest vehicles to explore the region at your own pace.",
+      "Explore the fascinating, unspoiled landscape of Rožaje on four wheels. Our guided quad tours take you deep into the mountain landscapes, past crystal-clear springs and to breathtaking viewpoints on Hajla. For experienced adventurers, we offer flexible individual rentals of the latest vehicles to explore the region at your own pace.",
     safetyTitle: "Backcountry Safety",
     safetyBody:
       "Your safety is our top priority. Every expedition into the untouched wilderness of Rožaje is led by state-certified mountain guides with years of experience and profound local knowledge.",
     safetySecond:
-      "We use state-of-the-art safety equipment and GPS tracking to guarantee the highest level of protection. Trust the experts while you enjoy the freedom of the mountains.",
+      "We use state-of-the-art safety equipment and GPS tracking to guarantee the highest level of protection. Rely on our experience while you enjoy the freedom of the mountains.",
     pathsTitle: "Undiscovered Paths",
     pathsBody:
       "In the mountains around Rožaje, you will find landscapes that are unparalleled in their primal quality in Europe. From the rugged peaks of Hajla to the gentle plateaus, every route tells a story of silence.",
     pathsSecond:
-      "Our marked hiking trails lead through dense primeval forests and across clear mountain streams. A paradise for photographers and adventurers seeking the authentic Montenegro.",
+      "Our marked hiking trails lead through heavily forested regions and over clear mountain streams. A paradise for photographers and adventurers seeking the authentic Montenegro.",
     gearTitle: "Technology & Gear",
     gearBody:
       "Precision in every turn. Our equipment combines state-of-the-art technology with the region's highest safety standards.",
@@ -127,17 +127,17 @@ const copy = {
       "U netaknutim planinama Rožaja ponovo definišemo zimsku avanturu. Za nas motorizovani zimski sportovi ne znače buku, već ekskluzivan pristup nedirnutim vrhovima i duboko snijegom pokrivenim dolinama koje bi inače bile nedostupne. Doživite savršenu simbiozu moderne tehnologije i iskonske tišine crnogorske prirode.",
     quadTitle: "Quad ture i iznajmljivanje",
     quadBody:
-      "Otkrijte netaknutu divljinu Rožaja na četiri točka. Naše vođene kvad ture vode vas duboko u planinske predjele, pored kristalno čistih izvora i do nevjerovatnih vidikovaca na Hajli. Za iskusne avanturiste nudimo fleksibilno individualno iznajmljivanje najsavremenijih vozila za istraživanje regiona sopstvenim tempom.",
+      "Istražite fascinantne, netaknute predjele Rožaja na četiri točka. Naše vođene kvad ture vode vas duboko u planinske predjele, pored kristalno čistih izvora i do nevjerovatnih vidikovaca na Hajli. Za iskusne avanturiste nudimo fleksibilno individualno iznajmljivanje najsavremenijih vozila za istraživanje regiona sopstvenim tempom.",
     safetyTitle: "Bezbjednost na terenu",
     safetyBody:
       "Vaša bezbjednost je naš najveći prioritet. Svaku ekspediciju u netaknutu divljinu Rožaja vode državno sertifikovani planinski vodiči sa dugogodišnjim iskustvom i dubokim poznavanjem terena.",
     safetySecond:
-      "Koristimo najsavremeniju sigurnosnu opremu i GPS praćenje kako bismo garantovali najviši nivo zaštite. Vjerujte stručnjacima dok uživate u slobodi planina.",
+      "Koristimo najsavremeniju sigurnosnu opremu i GPS praćenje kako bismo garantovali najviši nivo zaštite. Oslonite se na naše iskustvo dok uživate u slobodi planina.",
     pathsTitle: "Neotkrivene staze",
     pathsBody:
       "U planinama oko Rožaja naći ćete predjele koji su po svojoj iskonskoj ljepoti rijetki u Evropi. Od krševitih vrhova Hajle do mekih visoravni, svaka ruta priča priču o tišini.",
     pathsSecond:
-      "Naše markirane pješačke staze vode kroz guste prašume i preko bistrih planinskih potoka. Raj za fotografe i avanturiste koji traže autentičnu Crnu Goru.",
+      "Naše označene planinarske staze vode kroz veoma pošumljena područja i preko čistih planinskih potoka. Raj za fotografe i avanturiste koji traže autentičnu Crnu Goru.",
     gearTitle: "Tehnika i oprema",
     gearBody:
       "Preciznost u svakoj krivini. Naša oprema kombinuje najsavremeniju tehnologiju sa najvišim bezbjednosnim standardima regiona.",

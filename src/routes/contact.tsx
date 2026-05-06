@@ -1,9 +1,20 @@
 import { createFileRoute } from "@tanstack/react-router";
-import { Mail, MapPin, Phone } from "lucide-react";
+import { Mail, MapPin, MessageCircle, ExternalLink, Phone } from "lucide-react";
 import snowmobileBackground from "@/assets/exploration-snowmobile.png";
 import { rozajeImages } from "@/assets/rozaje365";
 import { useReveal } from "@/hooks/use-reveal";
 import { useLanguage } from "@/lib/language";
+
+const PHONE_NUMBER = "+382 60 093474";
+const PHONE_LINK = "tel:+38260093474";
+
+const WHATSAPP_NUMBER = "+49 172 4545074";
+const WHATSAPP_NUMBER2 = "+49 15758800312";
+
+const WHATSAPP_LINK = "https://wa.me/491724545074";
+const WHATSAPP_LINK2 = "https://wa.me/4915758800312";
+
+const MONTE_I_MORE_URL = "https://monteimore.com";
 
 const copy = {
   de: {
@@ -13,18 +24,20 @@ const copy = {
     eyebrow: "Kontakt",
     title: "Planen Sie Rožaje mit einem lokalen Einstieg.",
     intro:
-      "Schreiben Sie uns für Aufenthalte, Wintererlebnisse, Gruppenreisen oder Projektgespräche. Die Anfrage geht direkt an info@rozaje365.me.",
+      "Für Aufenthalte, Wintererlebnisse, Gruppenreisen oder Projektgespräche stehen wir per E-Mail oder WhatsApp zur Verfügung.",
+    contactEyebrow: "Direktkontakt",
+    phoneLabel: "Telefon",
+    whatsappLabel: "WhatsApp",
+    monteEyebrow: "Buchung & mehr Informationen",
     monteText:
-      "Wenn Sie direkt über Monte i More buchen möchten, wird hier der Zugang zur Buchungsseite ergänzt.",
-    monteCta: "Monte i More besuchen",
-    name: "Name",
-    email: "E-Mail",
-    message: "Nachricht",
-    submit: "Anfrage senden",
+      "Für detaillierte Buchungsinformationen und das vollständige Angebot besuchen Sie Monte i More.",
+    monteCta: "Monte i More besuchen →",
     location: "Rožaje, Nordmontenegro",
     mapHint: "Gebirgsregion zwischen Hajla, Tälern und winterlichen Routen.",
     mapCta: "Karte öffnen",
-    direct: "Direktkontakt",
+    altitude: "Höhe",
+    seasons: "Jahreszeiten",
+    toCoast: "zur Küste",
   },
   en: {
     metaTitle: "Contact — Rožaje 365",
@@ -33,18 +46,20 @@ const copy = {
     eyebrow: "Contact",
     title: "Plan Rožaje with a local point of entry.",
     intro:
-      "Write to us for stays, winter experiences, group trips or project conversations. The request goes directly to info@rozaje365.me.",
+      "For stays, winter experiences, group trips or project conversations, reach us by email or WhatsApp.",
+    contactEyebrow: "Direct contact",
+    phoneLabel: "Phone",
+    whatsappLabel: "WhatsApp",
+    monteEyebrow: "Booking & more information",
     monteText:
-      "If you would like to book directly through Monte i More, access to the booking page will be added here.",
-    monteCta: "Visit Monte i More",
-    name: "Name",
-    email: "Email",
-    message: "Message",
-    submit: "Send request",
+      "For detailed booking information and the full offer, visit Monte i More.",
+    monteCta: "Visit Monte i More →",
     location: "Rožaje, northern Montenegro",
     mapHint: "Mountain region between Hajla, valleys and winter routes.",
     mapCta: "Open map",
-    direct: "Direct contact",
+    altitude: "Altitude",
+    seasons: "Seasons",
+    toCoast: "to the coast",
   },
   me: {
     metaTitle: "Kontakt — Rožaje 365",
@@ -53,18 +68,20 @@ const copy = {
     eyebrow: "Kontakt",
     title: "Planirajte Rožaje uz lokalnu ulaznu tačku.",
     intro:
-      "Pišite nam za smještaj, zimske doživljaje, grupna putovanja ili projektne razgovore. Upit ide direktno na info@rozaje365.me.",
+      "Za smještaj, zimske doživljaje, grupna putovanja ili projektne razgovore, dostupni smo putem e-maila ili WhatsApp-a.",
+    contactEyebrow: "Direktan kontakt",
+    phoneLabel: "Telefon",
+    whatsappLabel: "WhatsApp",
+    monteEyebrow: "Rezervacije i više informacija",
     monteText:
-      "Ako želite rezervisati direktno preko Monte i More, ovdje će biti dodat pristup stranici za rezervacije.",
-    monteCta: "Posjeti Monte i More",
-    name: "Ime",
-    email: "E-mail",
-    message: "Poruka",
-    submit: "Pošalji upit",
+      "Za detaljne informacije o rezervacijama i kompletnu ponudu, posjetite Monte i More.",
+    monteCta: "Posjetite Monte i More →",
     location: "Rožaje, sjever Crne Gore",
     mapHint: "Planinska regija između Hajle, dolina i zimskih ruta.",
     mapCta: "Otvori mapu",
-    direct: "Direktan kontakt",
+    altitude: "Nadmorska visina",
+    seasons: "Godišnja doba",
+    toCoast: "do obale",
   },
 } as const;
 
@@ -89,29 +106,16 @@ function Contact() {
   return (
     <div ref={ref} className="bg-background">
       <header className="mx-auto max-w-[1500px] px-6 pt-20 md:px-12 md:pt-32">
-        <div className="reveal grid gap-8 md:grid-cols-12 md:items-end">
-          <div className="md:col-span-8">
-            <div className="eyebrow mb-6">{t.eyebrow}</div>
-            <h1 className="font-serif text-[40px] leading-[1.05] text-balance md:text-[72px]">
-              {t.title}
-            </h1>
-            <p className="mt-8 max-w-3xl text-lg leading-relaxed text-foreground/75 md:text-xl">
-              {t.intro}
-            </p>
-          </div>
-          <div className="md:col-span-4">
-            <p className="max-w-sm text-sm leading-relaxed text-foreground/64">{t.monteText}</p>
-            <button
-              type="button"
-              className="booking-cta mt-5 w-full md:w-auto"
-              aria-disabled="true"
-            >
-              <span>{t.monteCta}</span>
-              <span className="booking-cta-arrow" aria-hidden>
-                →
-              </span>
-            </button>
-          </div>
+        <div className="reveal">
+          <div className="eyebrow mb-6">{t.eyebrow}</div>
+
+          <h1 className="font-serif text-[40px] leading-[1.05] text-balance md:text-[72px]">
+            {t.title}
+          </h1>
+
+          <p className="mt-8 max-w-2xl text-lg leading-relaxed text-foreground/75 md:text-xl">
+            {t.intro}
+          </p>
         </div>
       </header>
 
@@ -123,30 +127,37 @@ function Contact() {
           loading="lazy"
           className="absolute inset-0 h-full w-full object-cover object-center opacity-[0.34]"
         />
+
         <div className="absolute inset-0 bg-paper/68" />
+
         <div className="relative z-10 mx-auto grid max-w-[1500px] gap-12 px-6 md:grid-cols-12 md:px-12">
-          <div className="reveal md:col-span-5">
-            <div className="overflow-hidden border border-border bg-background/92 backdrop-blur-sm">
-              <div className="relative h-80">
+          {/* Left: map */}
+          <div className="reveal flex flex-col gap-4 md:col-span-5">
+            <div className="flex flex-1 flex-col overflow-hidden border border-border bg-background/92 backdrop-blur-sm">
+              <div className="relative flex-1" style={{ minHeight: "20rem" }}>
                 <iframe
                   title={t.location}
                   src="https://www.google.com/maps?q=Ro%C5%BEaje%2C%20Montenegro&output=embed"
-                  className="h-full w-full grayscale-[35%]"
+                  className="absolute inset-0 h-full w-full grayscale-[35%]"
                   loading="lazy"
                   referrerPolicy="no-referrer-when-downgrade"
                 />
+
                 <div className="pointer-events-none absolute inset-x-0 bottom-0 bg-[linear-gradient(180deg,transparent,rgba(248,247,242,0.96))] px-5 pb-5 pt-16">
                   <div className="font-serif text-2xl">{t.location}</div>
+
                   <p className="mt-2 max-w-sm text-xs leading-relaxed text-muted-foreground">
                     {t.mapHint}
                   </p>
                 </div>
               </div>
+
               <div className="flex items-center justify-between gap-6 border-t border-border px-5 py-4">
                 <div className="flex items-center gap-2 text-[10px] uppercase tracking-[0.24em] text-muted-foreground">
                   <MapPin className="h-4 w-4" strokeWidth={1.5} />
                   Rožaje
                 </div>
+
                 <a
                   href="https://www.google.com/maps/search/?api=1&query=Ro%C5%BEaje%2C%20Montenegro"
                   target="_blank"
@@ -158,67 +169,144 @@ function Contact() {
               </div>
             </div>
 
-            <div className="mt-8 py-3">
-              <div className="eyebrow mb-5">{t.direct}</div>
-              <div className="space-y-4 text-sm text-muted-foreground">
-                <a
-                  href="mailto:info@rozaje365.me"
-                  className="flex w-fit items-center gap-3 bg-none no-underline transition-colors hover:text-foreground [background-image:none]"
-                >
-                  <Mail className="h-4 w-4" strokeWidth={1.5} />
-                  info@rozaje365.me
-                </a>
-                <div className="flex items-center gap-3">
-                  <MapPin className="h-4 w-4" strokeWidth={1.5} />
-                  {t.location}
+            {/* Location facts */}
+            <div className="grid grid-cols-3 border border-border bg-background/92 backdrop-blur-sm">
+              <div className="border-r border-border px-5 py-5">
+                <div className="font-serif text-2xl leading-none">860m</div>
+                <div className="mt-2 text-[10px] uppercase tracking-[0.22em] text-muted-foreground">
+                  {t.altitude}
                 </div>
-                <div className="flex items-center gap-3">
-                  <Phone className="h-4 w-4" strokeWidth={1.5} />
-                  Monte i More
+              </div>
+
+              <div className="border-r border-border px-5 py-5">
+                <div className="font-serif text-2xl leading-none">4</div>
+                <div className="mt-2 text-[10px] uppercase tracking-[0.22em] text-muted-foreground">
+                  {t.seasons}
+                </div>
+              </div>
+
+              <div className="px-5 py-5">
+                <div className="font-serif text-2xl leading-none">120km</div>
+                <div className="mt-2 text-[10px] uppercase tracking-[0.22em] text-muted-foreground">
+                  {t.toCoast}
                 </div>
               </div>
             </div>
           </div>
 
-          <form
-            action="mailto:info@rozaje365.me?subject=Ro%C5%BEaje%20365%20Inquiry"
-            method="post"
-            encType="text/plain"
-            className="reveal border border-border bg-background/92 p-5 backdrop-blur-sm md:col-span-6 md:col-start-7 md:p-8"
-          >
-            <label className="block text-[11px] uppercase tracking-[0.24em] text-muted-foreground">
-              {t.name}
-              <input
-                name="name"
-                required
-                className="mt-3 h-12 w-full border border-border bg-paper px-4 text-base normal-case tracking-normal outline-none transition-colors focus:border-foreground"
-              />
-            </label>
-            <label className="mt-6 block text-[11px] uppercase tracking-[0.24em] text-muted-foreground">
-              {t.email}
-              <input
-                name="email"
-                type="email"
-                required
-                className="mt-3 h-12 w-full border border-border bg-paper px-4 text-base normal-case tracking-normal outline-none transition-colors focus:border-foreground"
-              />
-            </label>
-            <label className="mt-6 block text-[11px] uppercase tracking-[0.24em] text-muted-foreground">
-              {t.message}
-              <textarea
-                name="message"
-                required
-                rows={8}
-                className="mt-3 w-full resize-none border border-border bg-paper px-4 py-3 text-base normal-case tracking-normal outline-none transition-colors focus:border-foreground"
-              />
-            </label>
-            <button type="submit" className="booking-cta mt-7 w-full">
-              <span>{t.submit}</span>
-              <span className="booking-cta-arrow" aria-hidden>
-                →
-              </span>
-            </button>
-          </form>
+          {/* Right: contact info + Monte i More */}
+          <div className="reveal flex flex-col border border-border bg-background/92 backdrop-blur-sm md:col-span-6 md:col-start-7">
+            {/* Direct contact */}
+            <div className="flex-1 p-8 md:p-10">
+              <div className="eyebrow mb-10">{t.contactEyebrow}</div>
+
+              <a
+                href="mailto:info@rozaje365.me"
+                className="group flex items-start justify-between border-b border-border pb-7 no-underline [background-image:none]"
+              >
+                <div>
+                  <div className="mb-1 text-[11px] uppercase tracking-[0.24em] text-muted-foreground">
+                    E-Mail
+                  </div>
+
+                  <div className="font-serif text-2xl text-foreground transition-opacity group-hover:opacity-60 md:text-3xl">
+                    info@rozaje365.me
+                  </div>
+                </div>
+
+                <Mail
+                  className="mt-1 h-5 w-5 shrink-0 text-muted-foreground transition-colors group-hover:text-foreground"
+                  strokeWidth={1.5}
+                />
+              </a>
+
+              <a
+                href={PHONE_LINK}
+                className="group flex items-start justify-between border-b border-border py-7 no-underline [background-image:none]"
+              >
+                <div>
+                  <div className="mb-1 text-[11px] uppercase tracking-[0.24em] text-muted-foreground">
+                    {t.phoneLabel}
+                  </div>
+
+                  <div className="font-serif text-2xl text-foreground transition-opacity group-hover:opacity-60 md:text-3xl">
+                    {PHONE_NUMBER}
+                  </div>
+                </div>
+
+                <Phone
+                  className="mt-1 h-5 w-5 shrink-0 text-muted-foreground transition-colors group-hover:text-foreground"
+                  strokeWidth={1.5}
+                />
+              </a>
+
+              {/* WhatsApp numbers */}
+              <div className="pt-7">
+                <div className="mb-4 text-[11px] uppercase tracking-[0.24em] text-muted-foreground">
+                  {t.whatsappLabel}
+                </div>
+
+                <div className="flex flex-col gap-4">
+                  <a
+                    href={WHATSAPP_LINK}
+                    target="_blank"
+                    rel="noreferrer"
+                    className="group flex items-center justify-between no-underline [background-image:none]"
+                  >
+                    <div className="font-serif text-2xl text-foreground transition-opacity group-hover:opacity-60 md:text-3xl">
+                      {WHATSAPP_NUMBER}
+                    </div>
+
+                    <MessageCircle
+                      className="h-5 w-5 shrink-0 text-muted-foreground transition-colors group-hover:text-foreground"
+                      strokeWidth={1.5}
+                    />
+                  </a>
+
+                  <a
+                    href={WHATSAPP_LINK2}
+                    target="_blank"
+                    rel="noreferrer"
+                    className="group flex items-center justify-between no-underline [background-image:none]"
+                  >
+                    <div className="font-serif text-2xl text-foreground transition-opacity group-hover:opacity-60 md:text-3xl">
+                      {WHATSAPP_NUMBER2}
+                    </div>
+
+                    <MessageCircle
+                      className="h-5 w-5 shrink-0 text-muted-foreground transition-colors group-hover:text-foreground"
+                      strokeWidth={1.5}
+                    />
+                  </a>
+                </div>
+              </div>
+            </div>
+
+            {/* Monte i More — light block at bottom */}
+            <div className="border-t border-border bg-background/92 p-8 text-foreground backdrop-blur-sm md:p-10">
+              <div className="eyebrow mb-4 text-muted-foreground">
+                {t.monteEyebrow}
+              </div>
+
+              <p className="mb-8 text-sm leading-relaxed text-foreground/65">
+                {t.monteText}
+              </p>
+
+              <a
+                href={MONTE_I_MORE_URL}
+                target="_blank"
+                rel="noreferrer"
+                className="booking-cta w-full bg-ink text-white no-underline [background-image:none]"
+              >
+                <span>{t.monteCta}</span>
+
+                <ExternalLink
+                  className="h-4 w-4 shrink-0"
+                  strokeWidth={1.5}
+                />
+              </a>
+            </div>
+          </div>
         </div>
       </section>
     </div>

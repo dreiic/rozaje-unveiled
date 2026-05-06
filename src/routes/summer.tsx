@@ -27,9 +27,7 @@ const copy = {
         heading: "Die Prokletije, einfach erklärt",
         body: (
           <p>
-            Die Prokletije erstrecken sich über Montenegro, Albanien und Kosovo. Der Hajla-Gipfel
-            (2.403 m) gehört zu den zugänglicheren Gipfeln: ein langer, aber technisch einfacher Tag
-            von Rožaje aus. Der Lohn ist einer der weitesten ununterbrochenen Ausblicke des Balkans.
+            Das Prokletije-Gebirge erstreckt sich über Montenegro, Albanien und Kosovo und gilt als eine der beeindruckendsten Gebirgslandschaften des Balkans. Der Gipfel Hajla mit 2.403 m zählt zu den besser erreichbaren Zielen: eine längere, aber gut machbare Tageswanderung ab Rožaje. Auf dem Gipfel eröffnet sich ein Panorama von außergewöhnlicher Weite — ein unvergesslicher Ausblick, der zu den spektakulärsten der gesamten Region zählt.
           </p>
         ),
       },
@@ -37,7 +35,7 @@ const copy = {
         heading: "Wo die Seen liegen",
         body: (
           <p>
-            Bukumirsko, Hridsko, Visitorsko: kleine, spiegelstille Gletscherseen, verstreut in den
+            Bukumirsko, Hridsko, Visitorsko: kleine, spiegelglatte Gletscherseen, verstreut in den
             Bergen. Die meisten sind als Tageswanderung erreichbar, einige verlangen eine
             Übernachtung im Katun.
           </p>
@@ -76,9 +74,7 @@ const copy = {
         heading: "The Prokletije, in plain terms",
         body: (
           <p>
-            The Accursed Mountains stretch across Montenegro, Albania and Kosovo. Hajla peak (2,403
-            m) is one of the kinder summits: a long but non-technical day from Rožaje. The reward is
-            one of the largest uninterrupted views in the Balkans.
+            The Prokletije Mountains stretch across Montenegro, Albania, and Kosovo and are considered one of the most impressive mountain landscapes in the Balkans. The Hajla peak, rising to 2,403 m, is one of the more accessible destinations: a longer yet manageable day hike starting from Rožaje. At the summit, a panorama of extraordinary scale unfolds — an unforgettable view that ranks among the most spectacular in the entire region.
           </p>
         ),
       },
@@ -124,9 +120,7 @@ const copy = {
         heading: "Prokletije, jednostavno rečeno",
         body: (
           <p>
-            Prokletije se protežu kroz Crnu Goru, Albaniju i Kosovo. Vrh Hajle (2.403 m) spada u
-            pristupačnije vrhove: dug, ali tehnički nezahtjevan dan iz Rožaja. Nagrada je jedan od
-            najširih neprekinutih pogleda na Balkanu.
+            Planinski masiv Prokletija prostire se kroz Crnu Goru, Albaniju i Kosovo i smatra se jednim od najimpresivnijih planinskih predjela na Balkanu. Vrh Hajla, visok 2.403 m, spada među pristupačnije destinacije: duža, ali izvodljiva dnevna tura koja počinje iz Rožaja. Sa samog vrha otvara se panorama izuzetnih razmjera — nezaboravan pogled koji se ubraja među najspektakularnije u cijeloj regiji.
           </p>
         ),
       },

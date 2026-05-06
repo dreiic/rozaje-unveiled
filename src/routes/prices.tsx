@@ -15,7 +15,7 @@ const copy = {
       ["Ferienwohnung, 7 Nächte", "€315"],
       ["Skipässe (2 × 6 Tage)", "€140"],
       ["Lebensmittel & Kochen im Apartment", "€85"],
-      ["Restaurants (4 Abendessen)", "€96"],
+      ["Restaurants (4 AbendeWie es noch günstiger wirdssen)", "€96"],
       ["Kaffee & Cafés", "€28"],
       ["Schneemobil-Tour", "€60"],
       ["Lokaler Transport & Taxis", "€35"],
@@ -35,17 +35,7 @@ const copy = {
             das Dreifache, und oft mit weniger Berg für sich selbst.
           </p>
         ),
-      },
-      {
-        heading: "Wie es noch günstiger wird",
-        body: (
-          <p>
-            Unter der Woche anreisen, im Apartment kochen, am ersten Tag einen Mehrtagespass kaufen
-            und den Gastgeber nach familiengeführten Restaurants fragen. Sie sind günstiger, besser
-            und wärmer als vieles auf der touristischen Karte.
-          </p>
-        ),
-      },
+      }
     ],
     ctaTitle: "Möchten Sie diese Preise sichern?",
     ctaBody:
@@ -80,17 +70,7 @@ const copy = {
             arguably less mountain to yourself.
           </p>
         ),
-      },
-      {
-        heading: "How to spend even less",
-        body: (
-          <p>
-            Travel midweek, cook at the apartment, buy a multi-day pass on day one, and ask your
-            host for the family-run restaurants. They are cheaper, better and warmer than anything
-            on a tourist map.
-          </p>
-        ),
-      },
+      }
     ],
     ctaTitle: "Want to lock in these prices?",
     ctaBody:
@@ -125,17 +105,7 @@ const copy = {
             skuplje, često sa manje planine samo za sebe.
           </p>
         ),
-      },
-      {
-        heading: "Kako potrošiti još manje",
-        body: (
-          <p>
-            Dođi radnim danima, kuvaj u apartmanu, kupi višednevni ski-pas prvog dana i pitaj
-            domaćina za porodične restorane. Jeftiniji su, bolji i topliji od većine mjesta sa
-            turističke mape.
-          </p>
-        ),
-      },
+      }
     ],
     ctaTitle: "Želite da uhvatite ove cijene?",
     ctaBody:

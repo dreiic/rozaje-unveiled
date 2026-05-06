@@ -29,7 +29,7 @@ const copy = {
         body: (
           <>
             <p>
-              Hajla liegt auf 1.800 m und profitiert von der adriatisch-kontinentalen Schneelinie.
+              Hajla liegt auf 2.403 m und profitiert von der adriatisch-kontinentalen Schneelinie.
               In einem normalen Winter halten die oberen Pisten von Ende Dezember bis Mitte April.
               Die unteren Abfahrten können Ende Februar dünner werden, dann schicken Einheimische
               einen meist weiter nach oben.
@@ -88,7 +88,7 @@ const copy = {
         body: (
           <>
             <p>
-              Hajla sits at 1,800 m and benefits from the Adriatic-Continental snow line. In a
+              Hajla sits at 2,403 m and benefits from the Adriatic-Continental snow line. In a
               normal winter, the upper pistes hold cover from late December to mid-April. Lower runs
               may thin in late February, and locals usually point you uphill on those days.
             </p>
@@ -145,7 +145,7 @@ const copy = {
         body: (
           <>
             <p>
-              Hajla je na 1.800 m i ima koristi od jadransko-kontinentalne sniježne linije. U
+              Hajla je na 2.403 m i ima koristi od jadransko-kontinentalne sniježne linije. U
               normalnoj zimi gornje staze drže snijeg od kraja decembra do sredine aprila. Donje
               staze krajem februara mogu da oslabe, pa te lokalci tada obično upute više prema vrhu.
             </p>
