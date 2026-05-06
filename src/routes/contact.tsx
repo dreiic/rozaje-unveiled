@@ -201,7 +201,7 @@ function Contact() {
               <div className="eyebrow mb-10">{t.contactEyebrow}</div>
 
               <a
-                href="mailto:info@rozaje365.me"
+                href="mailto:info@rozaje365.com"
                 className="group flex items-start justify-between border-b border-border pb-7 no-underline [background-image:none]"
               >
                 <div>
@@ -210,7 +210,7 @@ function Contact() {
                   </div>
 
                   <div className="font-serif text-2xl text-foreground transition-opacity group-hover:opacity-60 md:text-3xl">
-                    info@rozaje365.me
+                    info@rozaje365.com
                   </div>
                 </div>
 
