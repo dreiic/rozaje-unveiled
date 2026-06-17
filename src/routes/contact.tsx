@@ -1,18 +1,13 @@
 import { createFileRoute } from "@tanstack/react-router";
-import { Mail, MapPin, MessageCircle, ExternalLink, Phone } from "lucide-react";
+import { Mail, MapPin, MessageCircle, ExternalLink } from "lucide-react";
 import snowmobileBackground from "@/assets/exploration-snowmobile.png";
 import { rozajeImages } from "@/assets/rozaje365";
 import { useReveal } from "@/hooks/use-reveal";
 import { useLanguage } from "@/lib/language";
 
-const PHONE_NUMBER = "+382 60 093474";
-const PHONE_LINK = "tel:+38260093474";
+const WHATSAPP_NUMBER = "+49 1575 8800312";
 
-const WHATSAPP_NUMBER = "+49 172 4545074";
-const WHATSAPP_NUMBER2 = "+49 15758800312";
-
-const WHATSAPP_LINK = "https://wa.me/491724545074";
-const WHATSAPP_LINK2 = "https://wa.me/4915758800312";
+const WHATSAPP_LINK = "https://wa.me/4915758800312";
 
 const MONTE_I_MORE_URL = "https://monteimore.com";
 
@@ -26,7 +21,6 @@ const copy = {
     intro:
       "Für Aufenthalte, Wintererlebnisse, Gruppenreisen oder Projektgespräche stehen wir per E-Mail oder WhatsApp zur Verfügung.",
     contactEyebrow: "Direktkontakt",
-    phoneLabel: "Telefon",
     whatsappLabel: "WhatsApp",
     monteEyebrow: "Buchung & mehr Informationen",
     monteText:
@@ -48,7 +42,6 @@ const copy = {
     intro:
       "For stays, winter experiences, group trips or project conversations, reach us by email or WhatsApp.",
     contactEyebrow: "Direct contact",
-    phoneLabel: "Phone",
     whatsappLabel: "WhatsApp",
     monteEyebrow: "Booking & more information",
     monteText:
@@ -70,7 +63,6 @@ const copy = {
     intro:
       "Za smještaj, zimske doživljaje, grupna putovanja ili projektne razgovore, dostupni smo putem e-maila ili WhatsApp-a.",
     contactEyebrow: "Direktan kontakt",
-    phoneLabel: "Telefon",
     whatsappLabel: "WhatsApp",
     monteEyebrow: "Rezervacije i više informacija",
     monteText:
@@ -201,7 +193,7 @@ function Contact() {
               <div className="eyebrow mb-10">{t.contactEyebrow}</div>
 
               <a
-                href="mailto:info@rozaje365.com"
+                href="mailto:monteimore.me@gmail.com"
                 className="group flex items-start justify-between border-b border-border pb-7 no-underline [background-image:none]"
               >
                 <div>
@@ -210,31 +202,11 @@ function Contact() {
                   </div>
 
                   <div className="font-serif text-2xl text-foreground transition-opacity group-hover:opacity-60 md:text-3xl">
-                    info@rozaje365.com
+                    monteimore.me@gmail.com
                   </div>
                 </div>
 
                 <Mail
-                  className="mt-1 h-5 w-5 shrink-0 text-muted-foreground transition-colors group-hover:text-foreground"
-                  strokeWidth={1.5}
-                />
-              </a>
-
-              <a
-                href={PHONE_LINK}
-                className="group flex items-start justify-between border-b border-border py-7 no-underline [background-image:none]"
-              >
-                <div>
-                  <div className="mb-1 text-[11px] uppercase tracking-[0.24em] text-muted-foreground">
-                    {t.phoneLabel}
-                  </div>
-
-                  <div className="font-serif text-2xl text-foreground transition-opacity group-hover:opacity-60 md:text-3xl">
-                    {PHONE_NUMBER}
-                  </div>
-                </div>
-
-                <Phone
                   className="mt-1 h-5 w-5 shrink-0 text-muted-foreground transition-colors group-hover:text-foreground"
                   strokeWidth={1.5}
                 />
@@ -263,21 +235,6 @@ function Contact() {
                     />
                   </a>
 
-                  <a
-                    href={WHATSAPP_LINK2}
-                    target="_blank"
-                    rel="noreferrer"
-                    className="group flex items-center justify-between no-underline [background-image:none]"
-                  >
-                    <div className="font-serif text-2xl text-foreground transition-opacity group-hover:opacity-60 md:text-3xl">
-                      {WHATSAPP_NUMBER2}
-                    </div>
-
-                    <MessageCircle
-                      className="h-5 w-5 shrink-0 text-muted-foreground transition-colors group-hover:text-foreground"
-                      strokeWidth={1.5}
-                    />
-                  </a>
                 </div>
               </div>
             </div>
