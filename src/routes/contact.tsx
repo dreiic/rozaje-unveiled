@@ -5,9 +5,9 @@ import { rozajeImages } from "@/assets/rozaje365";
 import { useReveal } from "@/hooks/use-reveal";
 import { useLanguage } from "@/lib/language";
 
-const WHATSAPP_NUMBER = "+49 1575 8800312";
+const WHATSAPP_NUMBER = "+382 69 333 622";
 
-const WHATSAPP_LINK = "https://wa.me/4915758800312";
+const WHATSAPP_LINK = "https://wa.me/38269333622";
 
 const MONTE_I_MORE_URL = "https://monteimore.com";
 
